@@ -11,12 +11,13 @@ public class ThirdPersonMovement : MonoBehaviour
     public float smoothValueOnTurn = 40f;
     public float rotationBound = 0.3f;
     public float rotationAcceleration = 0.3f;
+    public float gravity = -9.8f;
 
     private float initialRotationAcceleration;
     private float previousHorizontalDirection;
     private bool wasRotatingRight = false;
     private bool wasMoving = false;
-
+    
     private void Start()
     {
         initialRotationAcceleration = rotationAcceleration;
@@ -67,12 +68,8 @@ public class ThirdPersonMovement : MonoBehaviour
             rotationAcceleration -= 0.008f;
         }
 
-        Vector3 direction = new Vector3(horizontalDirection, 0f, 0.4f).normalized;
-
-        if (direction.magnitude >= 0.1f)
-        {
-            Vector3 movementDirection = transform.forward * speedOverTime * Time.deltaTime;
-            controller.Move(movementDirection);
-        }
+        Vector3 direction = transform.forward + Physics.gravity;
+        Vector3 movementDirection = direction * speedOverTime * Time.deltaTime;
+        controller.Move(movementDirection);
     }
 }

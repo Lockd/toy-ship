@@ -54,6 +54,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3029992780897926298}
     m_Modifications:
+    - target: {fileID: 2419224820179898366, guid: ef77116b67aa6904ea63e2c8f8a9e01a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5205820593682485772, guid: ef77116b67aa6904ea63e2c8f8a9e01a, type: 3}
       propertyPath: m_Name
       value: Straight Road
@@ -200,6 +204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Side Road
       objectReference: {fileID: 0}
+    - target: {fileID: 5358283897171642987, guid: 071da048e1fb12c41a8b6b0b6c71c0aa, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071da048e1fb12c41a8b6b0b6c71c0aa, type: 3}
 --- !u!4 &7101910077590395631 stripped
@@ -269,6 +277,10 @@ PrefabInstance:
     - target: {fileID: 5358283897171642987, guid: 071da048e1fb12c41a8b6b0b6c71c0aa, type: 3}
       propertyPath: m_Name
       value: Left Side Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358283897171642987, guid: 071da048e1fb12c41a8b6b0b6c71c0aa, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071da048e1fb12c41a8b6b0b6c71c0aa, type: 3}
