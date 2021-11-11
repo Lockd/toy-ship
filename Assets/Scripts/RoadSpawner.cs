@@ -13,7 +13,7 @@ public class RoadSpawner : MonoBehaviour
     public GameObject[] Trees;
 
     private string LastRoadType;
-    private int indexOfLastTile = 0;
+    private int indexOfLastTile = 1;
     private Vector3 initialRoadPosition = new Vector3(0f, 0f, 0f);
     private Vector3 positionScale = new Vector3(0f, 0f, 160f);
 
