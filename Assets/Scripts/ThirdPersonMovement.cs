@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public GameOverScreen gameOverScreen;
     public float speed = 20f;
     public float speedByTimeMultiplier = 1.1f;
     public float maxSpeed = 50f;
@@ -45,8 +46,8 @@ public class ThirdPersonMovement : MonoBehaviour
             (Time.time - timeOfExit > 1f && amountOfPointsInWater < 4) ||
             amountOfPointsInWater <= 0
         ) {
-            // game over here
-            // Debug.Log("Game Over");
+            // TODO when coins and distance counter is added pass them here
+            gameOverScreen.onDisplayChange(true, 10, 32);
         }
 
         if (speedOverTime > maxSpeed)
