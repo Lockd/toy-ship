@@ -10,23 +10,14 @@ public class ThirdPersonMovement : MonoBehaviour
     public float speedByTimeMultiplier = 1.1f;
     public float maxSpeed = 50f;
     public float smoothValueOnTurn = 40f;
-    public float rotationAcceleration = 0.3f;
     public float gravity = -9.8f;
 
     [SerializeField] private Slider slider;
 
     [HideInInspector] public int amountOfPointsInWater = 0;
-
-    private float initialRotationAcceleration;
     private float previousHorizontalDirection;
-    private bool wasRotatingRight = false;
     private bool wasMoving = false;
     private float timeOfExit;
-    
-    private void Start()
-    {
-        initialRotationAcceleration = rotationAcceleration;
-    }
 
     public void OnExitWater()
     {
@@ -42,7 +33,6 @@ public class ThirdPersonMovement : MonoBehaviour
             amountOfPointsInWater = 4;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float horizontal = slider.value;
@@ -62,12 +52,6 @@ public class ThirdPersonMovement : MonoBehaviour
         if (speedOverTime > maxSpeed)
             speedOverTime = maxSpeed;
 
-        if (horizontal > 0)
-            wasRotatingRight = true;
-
-        if (horizontal < 0)
-            wasRotatingRight = false;
-
         float horizontalDirection = previousHorizontalDirection;
         Vector3 rotationDirection;
         if (horizontal != 0)
@@ -76,18 +60,8 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.Rotate(rotationDirection * speedOverTime * Time.deltaTime * smoothValueOnTurn);
             previousHorizontalDirection = horizontal;
             horizontalDirection += horizontal;
-            rotationAcceleration = initialRotationAcceleration;
+            
             wasMoving = true;
-
-        } else if (rotationAcceleration > 0 && wasMoving) {
-            float rotationWithDirection = rotationAcceleration;
-
-            if (!wasRotatingRight)
-                rotationWithDirection = -rotationAcceleration;
-
-            rotationDirection = new Vector3(0f, rotationWithDirection, 0f).normalized;
-            transform.Rotate(rotationDirection * speedOverTime * Time.deltaTime * smoothValueOnTurn);
-            rotationAcceleration -= 0.008f;
         }
 
         Vector3 direction = transform.forward + Physics.gravity;
