@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
     public GameOverScreen gameOverScreen;
+    public CalculateTravelledDistance calculateTravelledDistance;
     public float speed = 20f;
     public float speedByTimeMultiplier = 1.1f;
     public float maxSpeed = 50f;
@@ -35,10 +35,7 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         haveEnteredWater = false;
         amountOfPointsInWater = 0;
-        isOnGameOverScreen = false; 
-        Debug.Log(amountOfPointsInWater);
-        Debug.Log(isOnGameOverScreen);
-        Debug.Log(haveEnteredWater);
+        isOnGameOverScreen = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,7 +47,9 @@ public class ThirdPersonMovement : MonoBehaviour
     }
     public void OnGameOver() {
         isOnGameOverScreen = true;
-        gameOverScreen.onDisplayChange(true, 10, 32);
+        calculateTravelledDistance.onGameOver();
+        // TODO calculate amount of collected coins here
+        gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, 32);
     }
 
     void Update()
@@ -64,7 +63,6 @@ public class ThirdPersonMovement : MonoBehaviour
             (speedOverTime <= 0f || amountOfPointsInWater <= 0) &&
             (!isOnGameOverScreen && haveEnteredWater)
         ) {
-            // TODO when coins and distance counter is added pass them here
             OnGameOver();
         }
 

@@ -12,7 +12,7 @@ public class GameOverScreen : MonoBehaviour
     public void onDisplayChange(bool isActive, float distance, int coins) {
         gameObject.SetActive(isActive);
         if (isActive) {
-            distanceText.text = "You travelled " + distance.ToString() + " meters";
+            distanceText.text = "You travelled " + Mathf.Round(distance).ToString() + " meters";
             cointsText.text = "And collected " + coins.ToString() + " coins";
         }
     }
