@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
@@ -12,13 +13,12 @@ public class ThirdPersonMovement : MonoBehaviour
     public float maxSpeed = 50f;
     public float smoothValueOnTurn = 40f;
     public float gravity = -9.8f;
+    public int amountOfPointsInWater = 0;
 
     [SerializeField] private Slider slider;
-
-    [HideInInspector] public int amountOfPointsInWater = 0;
-    private float previousHorizontalDirection;
-    private bool wasMoving = false;
     private float timeOfExit;
+    private bool haveEnteredWater = false;
+    private bool isOnGameOverScreen = false;
 
     public void OnExitWater()
     {
@@ -29,9 +29,16 @@ public class ThirdPersonMovement : MonoBehaviour
     public void OnEnterWater()
     {
         amountOfPointsInWater += 1;
-        // Kostyl' ebanii :)
-        if (amountOfPointsInWater > 4)
-            amountOfPointsInWater = 4;
+        haveEnteredWater = true;
+    }
+    void Awake()
+    {
+        haveEnteredWater = false;
+        amountOfPointsInWater = 0;
+        isOnGameOverScreen = false; 
+        Debug.Log(amountOfPointsInWater);
+        Debug.Log(isOnGameOverScreen);
+        Debug.Log(haveEnteredWater);
     }
 
     void Update()
@@ -42,31 +49,28 @@ public class ThirdPersonMovement : MonoBehaviour
         float speedOverTime = speed + additionalSpeed;
 
         if (
-            speedOverTime <= 0f ||
-            (Time.time - timeOfExit > 1f && amountOfPointsInWater < 4) ||
-            amountOfPointsInWater <= 0
+            (speedOverTime <= 0f || amountOfPointsInWater < 4 || amountOfPointsInWater <= 0) &&
+            (!isOnGameOverScreen && haveEnteredWater)
         ) {
             // TODO when coins and distance counter is added pass them here
+            Debug.Log("Game over is called");
+            isOnGameOverScreen = true;
             gameOverScreen.onDisplayChange(true, 10, 32);
         }
 
         if (speedOverTime > maxSpeed)
             speedOverTime = maxSpeed;
 
-        float horizontalDirection = previousHorizontalDirection;
-        Vector3 rotationDirection;
-        if (horizontal != 0)
-        {
-            rotationDirection = new Vector3(0f, horizontal, 0f);
-            transform.Rotate(rotationDirection * speedOverTime * Time.deltaTime * smoothValueOnTurn);
-            previousHorizontalDirection = horizontal;
-            horizontalDirection += horizontal;
-            
-            wasMoving = true;
-        }
+        if (!isOnGameOverScreen){
 
-        Vector3 direction = transform.forward + Physics.gravity;
-        Vector3 movementDirection = direction * speedOverTime * Time.deltaTime;
-        controller.Move(movementDirection);
+            if (horizontal != 0) {
+                Vector3 rotationDirection = new Vector3(0f, horizontal, 0f);
+                transform.Rotate(rotationDirection * speedOverTime * Time.deltaTime * smoothValueOnTurn);
+            }
+
+            Vector3 direction = transform.forward + Physics.gravity;
+            Vector3 movementDirection = direction * speedOverTime * Time.deltaTime;
+            controller.Move(movementDirection);
+        }
     }
 }

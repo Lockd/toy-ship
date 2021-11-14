@@ -11,12 +11,15 @@ public class GameOverScreen : MonoBehaviour
 
     public void onDisplayChange(bool isActive, float distance, int coins) {
         gameObject.SetActive(isActive);
-        distanceText.text = "You travelled " + distance.ToString() + " meters";
-        cointsText.text = "And collected " + coins.ToString() + " coins";
+        if (isActive) {
+            distanceText.text = "You travelled " + distance.ToString() + " meters";
+            cointsText.text = "And collected " + coins.ToString() + " coins";
+        }
     }
 
     public void onClickRestartButton() {
-        SceneManager.LoadScene("Road");
+        gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void onClickShopButton() {
