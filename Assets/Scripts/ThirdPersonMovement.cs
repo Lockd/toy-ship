@@ -41,6 +41,18 @@ public class ThirdPersonMovement : MonoBehaviour
         Debug.Log(haveEnteredWater);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Obstacle")
+        {
+            OnGameOver();
+        }
+    }
+    public void OnGameOver() {
+        isOnGameOverScreen = true;
+        gameOverScreen.onDisplayChange(true, 10, 32);
+    }
+
     void Update()
     {
         float horizontal = slider.value;
@@ -49,13 +61,11 @@ public class ThirdPersonMovement : MonoBehaviour
         float speedOverTime = speed + additionalSpeed;
 
         if (
-            (speedOverTime <= 0f || amountOfPointsInWater < 4 || amountOfPointsInWater <= 0) &&
+            (speedOverTime <= 0f || amountOfPointsInWater <= 0) &&
             (!isOnGameOverScreen && haveEnteredWater)
         ) {
             // TODO when coins and distance counter is added pass them here
-            Debug.Log("Game over is called");
-            isOnGameOverScreen = true;
-            gameOverScreen.onDisplayChange(true, 10, 32);
+            OnGameOver();
         }
 
         if (speedOverTime > maxSpeed)
