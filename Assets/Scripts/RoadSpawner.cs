@@ -8,7 +8,7 @@ public class RoadSpawner : MonoBehaviour
     public GameObject[] StraightToLeftRoads;
     public GameObject[] LeftToStraightRoads;
     public GameObject[] LeftStraightRoads;
-
+    public GameObject coin;
     public int AmountOfTilesOnSpawn = 6;
     public GameObject[] Trees;
 
@@ -63,6 +63,13 @@ public class RoadSpawner : MonoBehaviour
         GameObject road = Instantiate(getNextRoadType(), transform);
         road.transform.position = getPositionForNewTile();
         indexOfLastTile++;
+
+        // Chance to spawn coin if a road prefab has a coin spawner in it
+        foreach (Transform child in road.transform) {
+            if (child.name == "Coin Spawner") {
+                Instantiate(coin, child.transform);
+            }
+        }
 
         int amountOfTreesToSpawn = (int)Random.Range(3f, 5f);
         int amountOfTreesOnTheLefSide = amountOfTreesToSpawn / 2;

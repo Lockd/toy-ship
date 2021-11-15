@@ -19,6 +19,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float timeOfExit;
     private bool haveEnteredWater = false;
     private bool isOnGameOverScreen = false;
+    private int collectedCoins = 0;
 
     public void OnExitWater()
     {
@@ -36,6 +37,7 @@ public class ThirdPersonMovement : MonoBehaviour
         haveEnteredWater = false;
         amountOfPointsInWater = 0;
         isOnGameOverScreen = false;
+        collectedCoins = 0;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,12 +46,16 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             OnGameOver();
         }
+
+        if (other.tag == "Collectable") {
+            collectedCoins++;
+            Destroy(other.gameObject);
+        }
     }
     public void OnGameOver() {
         isOnGameOverScreen = true;
         calculateTravelledDistance.onGameOver();
-        // TODO calculate amount of collected coins here
-        gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, 32);
+        gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, collectedCoins);
     }
 
     void Update()
