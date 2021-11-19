@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 921446197349550886}
   - component: {fileID: 921446197349550904}
   - component: {fileID: 5853432543120859381}
+  - component: {fileID: 5869636358340257118}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 921446197349550887}
   gameOverScreen: {fileID: 0}
+  calculateTravelledDistance: {fileID: 0}
   speed: 15
   speedByTimeMultiplier: 1.5
   maxSpeed: 30
@@ -164,6 +166,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8662267, y: 0.45542532, z: 1.2857953}
   m_Center: {x: 0.06688666, y: 0.25591514, z: 0.14289802}
+--- !u!114 &5869636358340257118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921446197349550884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c43bdc9af0d144d8199def6b2f406a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  celebrationIndicator: {fileID: 4972576915900132394, guid: bd0ea6a35bb7c2b4fa980f5cb31f804b, type: 3}
 --- !u!1 &921446197451319182
 GameObject:
   m_ObjectHideFlags: 0
