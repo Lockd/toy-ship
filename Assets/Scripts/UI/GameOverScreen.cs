@@ -10,13 +10,18 @@ public class GameOverScreen : MonoBehaviour
     public Text coinsText;
     public Text totalCoinsText;
     public Text newRecordText;
+    public GameObject ingameUIGameObject;
+    ingameUI ingameUI;
 
-    public void Awake() {
+    void Awake() {
+        ingameUI = ingameUIGameObject.GetComponent<ingameUI>();
         newRecordText.text = "";
     }
 
     public void onDisplayChange(bool isActive, float distance, int coins) {
         gameObject.SetActive(isActive);
+        ingameUI.changeDisplay(!isActive);
+
         if (isActive) {
             float roundedDistance = Mathf.Round(distance);
             distanceText.text = "You travelled " + roundedDistance.ToString() + " meters";
@@ -28,7 +33,7 @@ public class GameOverScreen : MonoBehaviour
 
             float totalCoins = PlayerPrefs.GetFloat("Coins") + coins;
             PlayerPrefs.SetFloat("Coins", totalCoins);
-            totalCoinsText.text = "Coins: " + totalCoins.ToString();
+            totalCoinsText.text = "Total coins collected: " + totalCoins.ToString();
 
             float bestDistance = PlayerPrefs.GetFloat("BestDistance");
             if (roundedDistance > bestDistance) {
@@ -40,6 +45,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void onClickRestartButton() {
         gameObject.SetActive(false);
+        ingameUI.changeDisplay(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

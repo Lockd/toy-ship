@@ -6,16 +6,18 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
-    public GameObject ingameUI;
+    public GameObject ingameUIGameObject;
     public Text countdownText;
     private bool isCountingDown = false;
     private float countdownLength;
     private bool isInCoroutine = false;
+    ingameUI ingameUI;
 
     void Awake()
     {
         countdownText.gameObject.SetActive(false);
         countdownLength = 3;
+        ingameUI = ingameUIGameObject.GetComponent<ingameUI>();
     }
 
     void Update()
@@ -52,7 +54,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameObject.SetActive(false);
         isGamePaused = false;
-        ingameUI.SetActive(true);
+        ingameUI.changeDisplay(true);
     }
 
     public void Pause()
@@ -60,6 +62,6 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
-        ingameUI.SetActive(false);
+        ingameUI.changeDisplay(false);
     }
 }
