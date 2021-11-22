@@ -9,16 +9,15 @@ public class ThirdPersonMovement : MonoBehaviour
     public GameOverScreen gameOverScreen;
     public CalculateTravelledDistance calculateTravelledDistance;
     public float speed = 20f;
-    public float speedByDistanceMultiplier = 1.5f;
     public float maxSpeed = 50f;
     public float smoothValueOnTurn = 40f;
     public int amountOfPointsInWater = 0;
-    [SerializeField] private Slider slider;
+    public Joystick joystick;
+
     private float timeOfExit;
     private bool haveEnteredWater = false;
     private bool isOnGameOverScreen = false;
     private int collectedCoins = 0;
-    float gravity = -9.8f;
 
     public void OnExitWater()
     {
@@ -59,7 +58,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void Update()
     {
-        float horizontal = slider.value;
+        float horizontal = joystick.Horizontal * 0.3f;
 
         float additionalSpeed = transform.position.z / 10000 * 20f;
         float speedOverTime = speed + additionalSpeed;
