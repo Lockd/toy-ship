@@ -415,7 +415,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30805439}
-  m_LocalRotation: {x: 0.0628776, y: 0.0000000042930837, z: -2.70474e-10, w: 0.99802125}
+  m_LocalRotation: {x: 0.0628776, y: -0.0000000042930837, z: 2.70474e-10, w: 0.99802125}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -738,7 +738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMax.x
@@ -758,11 +758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 960
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 645
+      value: 2216
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -794,11 +794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -441
+      value: -627
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -861
+      value: -1350
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2189,7 +2189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535682655}
-  m_LocalRotation: {x: 0.0809728, y: 0.000000004330967, z: -3.447787e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.0809728, y: -0.0000000043309667, z: 3.4477848e-10, w: 0.9967163}
   m_LocalPosition: {x: 64.75, y: 5.1000004, z: -33.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2665,7 +2665,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619211282}
-  m_LocalRotation: {x: 0.08097281, y: 0.000000004287471, z: -3.4831232e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.08097281, y: -0.00000000428747, z: 3.4831224e-10, w: 0.9967163}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3681,6 +3681,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 921446197349550886, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550886, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 0}
@@ -3688,6 +3692,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 325598852}
+    - target: {fileID: 921446197349550886, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: maxSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 921446197349550886, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
       propertyPath: gameOverScreen
       value: 
