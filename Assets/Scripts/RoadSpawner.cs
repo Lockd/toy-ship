@@ -83,7 +83,7 @@ public class RoadSpawner : MonoBehaviour
             float offset;
             if (counter <= amountOfTreesOnTheLefSide)
             {
-                TreePosition = new Vector3(Random.Range(16f, 21f), 1.25f, 0f);
+                TreePosition = new Vector3(Random.Range(78f, 81f), 1.25f, 0f);
                 offset = positionScale.z / amountOfTreesOnTheLefSide;
                 TreePosition.z = offset * counter + Random.Range(-1f, 1f) - (positionScale.z / 2);
             }
