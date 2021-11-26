@@ -2189,7 +2189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535682655}
-  m_LocalRotation: {x: 0.0809728, y: 0.000000004330967, z: -3.447787e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.0809728, y: -0.000000004330962, z: 3.4472114e-10, w: 0.9967163}
   m_LocalPosition: {x: 64.75, y: 5.1000004, z: -33.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2665,7 +2665,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619211282}
-  m_LocalRotation: {x: 0.08097281, y: 0.000000004287471, z: -3.4831232e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.08097281, y: -0.00000000428747, z: 3.4831224e-10, w: 0.9967163}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3704,5 +3704,9 @@ PrefabInstance:
       propertyPath: calculateTravelledDistance
       value: 
       objectReference: {fileID: 1878424776}
+    - target: {fileID: 921446197349550887, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_Center.y
+      value: 0.34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}

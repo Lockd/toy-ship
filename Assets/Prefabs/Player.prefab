@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921446197059516124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.528, y: 0.073, z: 0.749}
+  m_LocalPosition: {x: 0.528, y: 0, z: 0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 921446197349550885}
@@ -69,7 +69,6 @@ GameObject:
   - component: {fileID: 921446197349550887}
   - component: {fileID: 921446197349550886}
   - component: {fileID: 921446197349550904}
-  - component: {fileID: 5853432543120859381}
   - component: {fileID: 5869636358340257118}
   m_Layer: 0
   m_Name: Player
@@ -114,7 +113,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0.06, y: 0.49, z: 0}
+  m_Center: {x: 0.06, y: 0.3, z: 0}
 --- !u!114 &921446197349550886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,12 +130,10 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   calculateTravelledDistance: {fileID: 0}
   speed: 15
-  speedByTimeMultiplier: 1.5
   maxSpeed: 30
   smoothValueOnTurn: 5
-  gravity: -9.8
   amountOfPointsInWater: 0
-  slider: {fileID: 0}
+  joystick: {fileID: 0}
 --- !u!54 &921446197349550904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,19 +150,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5853432543120859381
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921446197349550884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8662267, y: 0.45542532, z: 1.2857953}
-  m_Center: {x: 0.06688666, y: 0.25591514, z: 0.14289802}
 --- !u!114 &5869636358340257118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921446197451319182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.411, y: 0.1108, z: -0.825}
+  m_LocalPosition: {x: 0.446, y: 0, z: -0.825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 921446197349550885}
@@ -262,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921446197589244236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41, y: 0.074, z: 0.711}
+  m_LocalPosition: {x: -0.41, y: 0, z: 0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 921446197349550885}
@@ -319,7 +303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921446197798359423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.338, y: 0.114, z: -0.819}
+  m_LocalPosition: {x: -0.338, y: 0, z: -0.819}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 921446197349550885}
