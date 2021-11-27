@@ -11,6 +11,7 @@ public class RoadSpawner : MonoBehaviour
     public GameObject coin;
     public int AmountOfTilesOnSpawn = 6;
     public GameObject[] Trees;
+    public GameObject carSpawnerBackwards;
 
     private string LastRoadType;
     private int indexOfLastTile = 1;
@@ -96,5 +97,8 @@ public class RoadSpawner : MonoBehaviour
 
             tree.transform.position = road.transform.position + TreePosition;
         }
+
+        // moving game object of car spawner when adding new tile
+        carSpawnerBackwards.transform.position += positionScale;
     }
 }

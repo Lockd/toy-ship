@@ -838,6 +838,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &333794776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333794777}
+  - component: {fileID: 333794778}
+  m_Layer: 0
+  m_Name: Car Spawner Forward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &333794777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333794776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35.56, y: 9.4, z: -60.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 355002477}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &333794778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333794776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb4ded7f0e11364c8e69bf787625054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - {fileID: 116448, guid: 8e633bea1c2f0644fb922e9bbe329648, type: 3}
+  - {fileID: 116448, guid: 3bbfd36332111ca4583206b5397b1018, type: 3}
+  - {fileID: 160038, guid: 6346f9198ebfb674baa1a61f29dc6060, type: 3}
+  - {fileID: 162266, guid: 17683e3ffcde346458c0fa5f35c39b9c, type: 3}
+  minSpawnCooldown: 7
+  maxSpawnCooldown: 11
+  isBackwardsSpawner: 0
+--- !u!1 &334117888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334117889}
+  - component: {fileID: 334117890}
+  m_Layer: 0
+  m_Name: Car Spawner Backwards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &334117889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334117888}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -6.7, y: 12.8, z: 63.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 355002477}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &334117890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334117888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb4ded7f0e11364c8e69bf787625054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - {fileID: 116448, guid: 8e633bea1c2f0644fb922e9bbe329648, type: 3}
+  - {fileID: 116448, guid: 3bbfd36332111ca4583206b5397b1018, type: 3}
+  - {fileID: 160038, guid: 6346f9198ebfb674baa1a61f29dc6060, type: 3}
+  - {fileID: 162266, guid: 17683e3ffcde346458c0fa5f35c39b9c, type: 3}
+  minSpawnCooldown: 7
+  maxSpawnCooldown: 11
+  isBackwardsSpawner: 1
 --- !u!1 &355002475
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +980,7 @@ MonoBehaviour:
   AmountOfTilesOnSpawn: 6
   Trees:
   - {fileID: 1448478749314432395, guid: 6fcdcee7f0147ed4392982c116da0698, type: 3}
+  carSpawnerBackwards: {fileID: 334117888}
 --- !u!4 &355002477
 Transform:
   m_ObjectHideFlags: 0
@@ -890,6 +993,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1408989873}
+  - {fileID: 333794777}
+  - {fileID: 334117889}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2563,7 +2668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 116448, guid: 8e633bea1c2f0644fb922e9bbe329648, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 485172, guid: 8e633bea1c2f0644fb922e9bbe329648, type: 3}
       propertyPath: m_RootOrder
