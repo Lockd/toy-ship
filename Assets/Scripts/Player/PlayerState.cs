@@ -6,52 +6,81 @@ public class PlayerState : MonoBehaviour
 {
     List<PointInTime> playerPositions;
     public float rewindDuration = 3f;
-    public Camera thirdPersonCamera;
+    public CharacterController controller;
     [HideInInspector] public bool isRewinding = false;
-    
+
     // TODO manipulate this variable when picking up time rewind thingy :)
     [HideInInspector] public bool canRewind = true;
+    ThirdPersonMovement movement;
 
     void Start()
     {
         playerPositions = new List<PointInTime>();
+        movement = transform.GetComponent<ThirdPersonMovement>();
     }
 
     void Update()
     {
-        if (isRewinding) {
+        if (isRewinding)
+        {
             Rewind();
-        } else {
+        }
+        else
+        {
             RecordPlayerPosition();
         }
     }
 
-    void Rewind() {
-        if (playerPositions.Count > 0) {
+    void Rewind()
+    {
+        if (playerPositions.Count > 0)
+        {
             PointInTime pointInTime = playerPositions[0];
-            transform.position = pointInTime.position;
+            Vector3 offset = pointInTime.position - transform.position;
+
+            if (offset.magnitude > .1f)
+            {
+
+                float additionalSpeed = transform.position.z / 10000 * 20f;
+                float speedOverTime = movement.speed + additionalSpeed;
+
+                if (speedOverTime > movement.maxSpeed)
+                {
+                    speedOverTime = movement.maxSpeed;
+                }
+
+                offset = offset.normalized * movement.speed;
+                controller.Move(offset * Time.deltaTime);
+            }
             transform.rotation = pointInTime.rotation;
             playerPositions.RemoveAt(0);
-        } else {
+        }
+        else
+        {
             StopRewind();
         }
     }
 
-    void RecordPlayerPosition() {
+    void RecordPlayerPosition()
+    {
         if (playerPositions.Count > Mathf.Round(rewindDuration / Time.fixedDeltaTime))
-		{
-			playerPositions.RemoveAt(playerPositions.Count - 1);
-		}
+        {
+            playerPositions.RemoveAt(playerPositions.Count - 1);
+        }
 
-		playerPositions.Insert(0, new PointInTime(transform.position, transform.rotation));
+        playerPositions.Insert(0, new PointInTime(transform.position, transform.rotation));
     }
 
-    void StopRewind() {
+    void StopRewind()
+    {
         isRewinding = false;
+        Time.timeScale = 1f;
     }
 
-    public void StartRewind() {
+    public void StartRewind()
+    {
         isRewinding = true;
         canRewind = false;
+        Time.timeScale = 0.7f;
     }
 }

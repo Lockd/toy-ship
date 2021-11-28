@@ -54,7 +54,6 @@ public class ThirdPersonMovement : MonoBehaviour
     }
     public void OnGameOver()
     {
-        Debug.Log("on game over is called");
         if (playerState.canRewind)
         {
             playerState.StartRewind();
