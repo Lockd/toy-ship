@@ -13,6 +13,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float smoothValueOnTurn = 40f;
     public int amountOfPointsInWater = 0;
     public Joystick joystick;
+    public PlayerState playerState;
 
     private float timeOfExit;
     private bool haveEnteredWater = false;
@@ -45,15 +46,25 @@ public class ThirdPersonMovement : MonoBehaviour
             OnGameOver();
         }
 
-        if (other.tag == "Collectable") {
+        if (other.tag == "Collectable")
+        {
             collectedCoins++;
             Destroy(other.gameObject);
         }
     }
-    public void OnGameOver() {
-        isOnGameOverScreen = true;
-        calculateTravelledDistance.onGameOver();
-        gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, collectedCoins);
+    public void OnGameOver()
+    {
+        Debug.Log("on game over is called");
+        if (playerState.canRewind)
+        {
+            playerState.StartRewind();
+        }
+        else
+        {
+            isOnGameOverScreen = true;
+            calculateTravelledDistance.onGameOver();
+            gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, collectedCoins);
+        }
     }
 
     void Update()
@@ -65,21 +76,25 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (
             (speedOverTime <= 0f || amountOfPointsInWater <= 0) &&
-            (!isOnGameOverScreen && haveEnteredWater)
-        ) {
+            (!isOnGameOverScreen && haveEnteredWater && !playerState.isRewinding)
+        )
+        {
             OnGameOver();
         }
 
         if (speedOverTime > maxSpeed)
             speedOverTime = maxSpeed;
 
-        if (!isOnGameOverScreen){
+        if (!isOnGameOverScreen && !playerState.isRewinding)
+        {
 
-            if (horizontal != 0) {
+            if (horizontal != 0)
+            {
                 Vector3 rotationDirection = new Vector3(0f, horizontal, 0f);
                 transform.Rotate(rotationDirection * speedOverTime * Time.deltaTime * smoothValueOnTurn);
             }
 
+            // Vector3 direction = -transform.forward + Physics.gravity;
             Vector3 direction = transform.forward + Physics.gravity;
             Vector3 movementDirection = direction * speedOverTime * Time.deltaTime;
             controller.Move(movementDirection);
