@@ -8,6 +8,7 @@ public class RoadSpawner : MonoBehaviour
     public GameObject[] StraightToLeftRoads;
     public GameObject[] LeftToStraightRoads;
     public GameObject[] LeftStraightRoads;
+    public GameObject streetLight;
     public GameObject coin;
     public int AmountOfTilesOnSpawn = 6;
     public GameObject[] Trees;
@@ -17,6 +18,12 @@ public class RoadSpawner : MonoBehaviour
     private int indexOfLastTile = 1;
     private Vector3 initialRoadPosition = new Vector3(0f, 0f, 0f);
     private Vector3 positionScale = new Vector3(0f, 0f, 160f);
+    Vector3[] additionsForStreetLightPositions = {
+        new Vector3 (-35f, 0f, -40f),
+        new Vector3 (-35f, 0f, 40f),
+        new Vector3 (75F, 0f, 40f),
+        new Vector3 (75f, 0f, -40f)
+    };
 
     void Start()
     {
@@ -69,6 +76,16 @@ public class RoadSpawner : MonoBehaviour
         foreach (Transform child in road.transform) {
             if (child.name == "Coin Spawner") {
                 Instantiate(coin, child.transform);
+            }
+        }
+
+        // adding street lights
+        for (int i = 0; i < 4; i++) {
+            GameObject instanciatedStreetLight = Instantiate(streetLight, transform);
+            instanciatedStreetLight.transform.parent = road.transform;
+            instanciatedStreetLight.transform.position = road.transform.position + additionsForStreetLightPositions[i];
+            if (i >= 2) {
+                instanciatedStreetLight.transform.Rotate(new Vector3 (0f, 180f, 0f));
             }
         }
 

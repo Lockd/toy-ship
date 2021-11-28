@@ -96,6 +96,7 @@ MonoBehaviour:
   - {fileID: 2096343797414330849, guid: b56824b8546a3064480845c25c6e6ac4, type: 3}
   - {fileID: 6333461201408148116, guid: 7c2abdc97474a5945840cd3910a360ac, type: 3}
   - {fileID: 1619283704511734787, guid: bbe667adb1ee97d4abacdd9b374d9ee0, type: 3}
+  isFirstTile: 0
 --- !u!1001 &3029992779619381772
 PrefabInstance:
   m_ObjectHideFlags: 0
