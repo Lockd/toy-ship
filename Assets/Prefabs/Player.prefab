@@ -178,7 +178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewindDuration: 3
-  canRewind: 1
+  controller: {fileID: 0}
+  isRewinding: 0
+  canRewind: 0
 --- !u!1 &921446197451319182
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,11 +8,8 @@ public class CoinSpawner : MonoBehaviour
     {
         float amountOfCoins = transform.childCount;
         
-        // if (Random.Range(0f, 1f) < (amountOfCoins / 6)) {
-            // Destroy(transform.gameObject);
-            // Debug.Log("Coins destroyed");
-        // } else {
-            // Debug.Log("Coins spawned");
-        // }
+        if (Random.Range(0f, 1f) < (amountOfCoins / 10)) {
+            Destroy(transform.gameObject);
+        }
     }
 }
