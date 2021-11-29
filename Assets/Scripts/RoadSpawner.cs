@@ -7,9 +7,9 @@ public class RoadSpawner : MonoBehaviour
     public GameObject[] StraightRoads;
     public GameObject[] StraightToLeftRoads;
     public GameObject[] LeftToStraightRoads;
+    // TODO implement those road types as well?
     public GameObject[] LeftStraightRoads;
     public GameObject streetLight;
-    public GameObject coin;
     public int AmountOfTilesOnSpawn = 6;
     public GameObject[] Trees;
     public GameObject carSpawnerBackwards;
@@ -71,13 +71,6 @@ public class RoadSpawner : MonoBehaviour
         GameObject road = Instantiate(getNextRoadType(), transform);
         road.transform.position = getPositionForNewTile();
         indexOfLastTile++;
-
-        // Chance to spawn coin if a road prefab has a coin spawner in it
-        foreach (Transform child in road.transform) {
-            if (child.name == "Coin Spawner") {
-                Instantiate(coin, child.transform);
-            }
-        }
 
         // adding street lights
         for (int i = 0; i < 4; i++) {
