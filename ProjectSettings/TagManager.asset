@@ -8,6 +8,7 @@ TagManager:
   - Water
   - Obstacle
   - Collectable
+  - Time Rewind Buff
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,18 @@ public class PlayerState : MonoBehaviour
     [HideInInspector] public bool isRewinding = false;
 
     // TODO manipulate this variable when picking up time rewind thingy :)
-    [HideInInspector] public bool canRewind = true;
+    public bool canRewind = false;
     ThirdPersonMovement movement;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Time Rewind Buff")
+        {
+            Debug.Log("Time rewind collected");
+            canRewind = true;
+            Destroy(other.gameObject);
+        }
+    }
 
     void Start()
     {
