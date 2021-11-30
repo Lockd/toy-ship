@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject ingameUIGameObject;
+    public GameObject pauseMenuBackground;
     public Text countdownText;
     private bool isCountingDown = false;
     private float countdownLength;
@@ -44,6 +46,8 @@ public class PauseMenu : MonoBehaviour
     {
         isCountingDown = true;
         countdownText.gameObject.SetActive(true);
+        pauseMenuBackground.gameObject.SetActive(false);
+        ingameUI.changeDisplay(true);
     }
 
     public void getBackToScene()
@@ -54,14 +58,20 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameObject.SetActive(false);
         isGamePaused = false;
-        ingameUI.changeDisplay(true);
     }
 
     public void Pause()
     {
         gameObject.SetActive(true);
+        pauseMenuBackground.gameObject.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
         ingameUI.changeDisplay(false);
+    }
+
+    public void onRestart() 
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
