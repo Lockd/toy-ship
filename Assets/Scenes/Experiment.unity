@@ -310,7 +310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &834093130
 LightingSettings:
@@ -543,7 +543,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -576,7 +576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1754224685
 MonoBehaviour:
@@ -591,8 +591,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1754224683}
-  minDeltaX: 0.5
-  minDeltaZ: 0.5
-  deltaForRiverSegments: 0.3
+  minDeltaX: -4
+  maxDeltaX: 4
+  minDeltaZ: 5
+  maxDeltaZ: 7
   minDistanceFromRiverCurve: 1
+  maxDistanceFromRiverCurve: 3
+  deltaForRiverSegments: 1
   lengthOfRiverSegment: 20
+--- !u!1001 &2126554120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 921446197349550884, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550885, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921446197349550886, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869636358340257118, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006310840782588944, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8880d0bfa60c13f479ba3778ae2b5a67, type: 3}
