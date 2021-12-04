@@ -593,5 +593,6 @@ MonoBehaviour:
   pathCreator: {fileID: 1754224683}
   minDeltaX: 0.5
   minDeltaZ: 0.5
-  deltaForRiverSegments: 0.1
+  deltaForRiverSegments: 0.3
   minDistanceFromRiverCurve: 1
+  lengthOfRiverSegment: 20

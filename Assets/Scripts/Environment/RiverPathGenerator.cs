@@ -11,8 +11,22 @@ public class RiverPathGenerator : MonoBehaviour
     public float minDeltaZ = .5f;
     public float deltaForRiverSegments = 1f;
     public float minDistanceFromRiverCurve = 1;
+    public int lengthOfRiverSegment = 20;
 
     Vector3[] sideDots = null;
+
+    void Start()
+    {
+        RegenerateRiver();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            RegenerateRiver();
+        }
+    }
 
     // VertexPath GeneratePath(Vector2[] points, bool closedPath)
     BezierPath GeneratePath(Vector2[] points, bool closedPath)
@@ -22,16 +36,13 @@ public class RiverPathGenerator : MonoBehaviour
         return bezierPath;
     }
 
-    void Start()
+    void RegenerateRiver()
     {
-        Vector2[] points = new Vector2[3];
-        points[0] = new Vector2(0f, 0f);
-        points[1] = new Vector2(0f, 1f);
-        points[2] = new Vector2 (7f, 6f);
+        Vector2[] points = GenerateRiverPoints();
         BezierPath path = GeneratePath(points, false);
         pathCreator.bezierPath = path;
 
-        sideDots = new Vector3[(int)(pathCreator.path.length / deltaForRiverSegments * 2)];
+        sideDots = new Vector3[(int)(pathCreator.path.length / deltaForRiverSegments * 2 + 2)];
         int sideDotsIdx = 0;
         for (float i = 0; i <= pathCreator.path.length; i += deltaForRiverSegments)
         {
@@ -46,13 +57,24 @@ public class RiverPathGenerator : MonoBehaviour
         }
     }
 
+    Vector2[] GenerateRiverPoints()
+    {
+        Vector2[] points = new Vector2[lengthOfRiverSegment];
+        points[0] = new Vector2(0f, 0f);
+        for (int i = 1; i < lengthOfRiverSegment; i++)
+        {
+            points[i] = new Vector2(Random.Range(-3f, 3f), Random.Range(2f, 5f)) + points[i - 1];
+        }
+        return points;
+    }
+
     void OnDrawGizmos()
     {
         if (sideDots != null)
         {
             foreach (Vector3 vector in sideDots)
             {
-                Gizmos.DrawSphere(vector, .01f);
+                Gizmos.DrawSphere(vector, .05f);
             }
         }
     }
