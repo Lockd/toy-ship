@@ -22,7 +22,6 @@ public class MeshGenerator : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("space") == true) {
-            Debug.Log("key is pressed");
             mesh.Clear();
             vertices = null;
             triangles = null;
