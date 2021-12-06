@@ -58,8 +58,8 @@ public class RiverPathGenerator : MonoBehaviour
             // TODO find a way to change width of the river :)
             // right side of the river
             Vector3 rotatedLine = (Quaternion.AngleAxis(90, transform.up) * direction).normalized;
-            dotsRight[dotsIdx] = pos + rotatedLine;;
-                       
+            dotsRight[dotsIdx] = pos + rotatedLine;
+
             // left side of the river
             Vector3 rotatedLineNegative = (Quaternion.AngleAxis(-90, transform.up) * direction).normalized;
             dotsLeft[dotsIdx] = pos + rotatedLineNegative;
@@ -74,9 +74,9 @@ public class RiverPathGenerator : MonoBehaviour
     {
         Vector2[] points = new Vector2[lengthOfRiverSegment];
         points[0] = new Vector2(0f, 0f);
-        
+
         int i = 1;
-        if (isInitial) 
+        if (isInitial)
         {
             points[1] = new Vector2(0, Random.Range(minDeltaZ, maxDeltaZ));
             i = 2;

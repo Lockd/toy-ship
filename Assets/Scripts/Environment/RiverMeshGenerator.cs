@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class RiverMeshGenerator : MonoBehaviour
 {
+    public float borderHeight = .5f;
+    public float xBorderOffset = .2f;
     Mesh mesh;
     Vector3[] vertices;
+    Vector3[] upperLeftDots;
+    Vector3[] upperRightDots;
     int[] triangles;
 
     void Start()
@@ -16,22 +20,39 @@ public class RiverMeshGenerator : MonoBehaviour
 
     public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots)
     {
-        // merging two arrays (I miss js)
-        vertices = new Vector3[leftDots.Length * 2];
-        leftDots.CopyTo(vertices, 0);
-        rightDots.CopyTo(vertices, leftDots.Length);
-        
-        triangles = new int[(leftDots.Length - 1) * 6];
-
-        for (int idx = 0, dotsIdx = 0; idx < triangles.Length; idx += 6)
+        upperLeftDots = new Vector3[leftDots.Length];
+        upperRightDots = new Vector3[rightDots.Length];
+        for (int i = 0; i < upperLeftDots.Length; i++)
         {
-            triangles[idx] = leftDots.Length + dotsIdx;
-            triangles[idx + 1] = dotsIdx;
-            triangles[idx + 2] = dotsIdx + 1;
-            triangles[idx + 3] = leftDots.Length + dotsIdx;
-            triangles[idx + 4] = dotsIdx + 1;
-            triangles[idx + 5] = leftDots.Length + dotsIdx + 1;
-            dotsIdx++;
+            upperLeftDots[i] = leftDots[i] + new Vector3(-xBorderOffset, borderHeight, 0);
+            upperRightDots[i] = rightDots[i] + new Vector3(xBorderOffset, borderHeight, 0);
+        }
+        // merging two arrays (I miss js)
+        vertices = new Vector3[leftDots.Length * 4];
+        upperLeftDots.CopyTo(vertices, 0);
+        leftDots.CopyTo(vertices, leftDots.Length);
+        rightDots.CopyTo(vertices, leftDots.Length * 2);
+        upperRightDots.CopyTo(vertices, leftDots.Length * 3);
+
+        triangles = new int[(leftDots.Length - 1) * 6 * 3];
+
+        int vert = 0;
+        int triangleIdx = 0;
+        for (int z = 0; z < 3; z++)
+        {
+            for (int x = 0; x < leftDots.Length - 1; x++)
+            {
+                triangles[triangleIdx] = vert + leftDots.Length;
+                triangles[triangleIdx + 1] = vert;
+                triangles[triangleIdx + 2] = vert + 1;
+                triangles[triangleIdx + 3] = vert + leftDots.Length;
+                triangles[triangleIdx + 4] = vert + 1;
+                triangles[triangleIdx + 5] = vert + leftDots.Length + 1;
+
+                vert++;
+                triangleIdx += 6;
+            }
+            vert++;
         }
 
         UpdateMesh();
@@ -39,9 +60,12 @@ public class RiverMeshGenerator : MonoBehaviour
 
     void UpdateMesh()
     {
-        mesh.Clear();
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
-        mesh.RecalculateNormals();
+        if (mesh != null)
+        {
+            mesh.Clear();
+            mesh.vertices = vertices;
+            mesh.triangles = triangles;
+            mesh.RecalculateNormals();
+        }
     }
 }
