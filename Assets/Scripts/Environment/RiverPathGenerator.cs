@@ -91,19 +91,4 @@ public class RiverPathGenerator : MonoBehaviour
         }
         return points;
     }
-
-    void OnDrawGizmos()
-    {
-        if (dotsLeft != null && dotsRight != null)
-        {
-            foreach (Vector3 vector in dotsLeft)
-            {
-                Gizmos.DrawSphere(vector, .05f);
-            }
-            foreach (Vector3 vector in dotsRight)
-            {
-                Gizmos.DrawSphere(vector, .05f);
-            }
-        }
-    }
 }
