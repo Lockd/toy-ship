@@ -110,14 +110,14 @@ public class RiverMeshGenerator : MonoBehaviour
     }
 
     // use this for debugging purposes
-    // void OnDrawGizmos()
-    // {
-    //     if (terrainLeftDots != null)
-    //     {
-    //         foreach (Vector3 vector in vertices)
-    //         {
-    //             Gizmos.DrawSphere(vector, .05f);
-    //         }
-    //     }
-    // }
+    void OnDrawGizmos()
+    {
+        if (terrainLeftDots != null)
+        {
+            foreach (Vector3 vector in vertices)
+            {
+                Gizmos.DrawSphere(vector, .05f);
+            }
+        }
+    }
 }

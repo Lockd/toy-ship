@@ -15,21 +15,26 @@ public class RiverPathGenerator : MonoBehaviour
     // public float minDistanceFromRiverCurve = 1f;
     // public float maxDistanceFromRiverCurve = 3f;
     public float deltaForRiverSegments = 1f;
-    public int lengthOfRiverSegment = 20;
+    public int riverLength = 20;
     public RiverMeshGenerator riverMeshGenerator;
     Vector3[] dotsLeft = null;
     Vector3[] dotsRight = null;
+    List<Vector2> riverPoints;
 
     void Start()
     {
-        RegenerateRiver(true);
+        GenerateRiver(true);
     }
 
     void Update()
     {
         if (Input.GetKeyDown("space"))
         {
-            RegenerateRiver(true);
+            GenerateRiver(true);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            GenerateRiver(false);
         }
     }
 
@@ -39,10 +44,13 @@ public class RiverPathGenerator : MonoBehaviour
         return bezierPath;
     }
 
-    void RegenerateRiver(bool isInitial)
+    void GenerateRiver(bool isInitial)
     {
-        Vector2[] points = GenerateRiverPoints(isInitial);
-        BezierPath path = GeneratePath(points, false);
+        if (isInitial) {
+            riverPoints = new List<Vector2>();
+        }
+        GenerateRiverPoints(isInitial);
+        BezierPath path = GeneratePath(riverPoints.ToArray(), false);
         pathCreator.bezierPath = path;
 
         int dotsLength = (int)(pathCreator.path.length / deltaForRiverSegments * 2 + 2) / 2;
@@ -70,25 +78,29 @@ public class RiverPathGenerator : MonoBehaviour
         riverMeshGenerator.GenerateMesh(dotsLeft, dotsRight);
     }
 
-    Vector2[] GenerateRiverPoints(bool isInitial)
+    void GenerateRiverPoints(bool isInitial)
     {
-        Vector2[] points = new Vector2[lengthOfRiverSegment];
-        points[0] = new Vector2(0f, 0f);
-
-        int i = 1;
         if (isInitial)
-        {
-            points[1] = new Vector2(0, Random.Range(minDeltaZ, maxDeltaZ));
-            i = 2;
-        }
+        {           
+            riverPoints.Add(new Vector2(0f, 0f));
+            riverPoints.Add(new Vector2(0, Random.Range(minDeltaZ, maxDeltaZ)));
 
-        while (i < lengthOfRiverSegment)
+            int i = 2;
+            while (i < riverLength)
+            {
+                float x = Random.Range(minDeltaX, maxDeltaX);
+                float z = Random.Range(minDeltaZ, maxDeltaZ);
+                riverPoints.Add(new Vector2(x, z) + riverPoints[i - 1]);
+                i++;
+            }            
+        }
+        else
         {
+            riverPoints.RemoveAt(0);
             float x = Random.Range(minDeltaX, maxDeltaX);
             float z = Random.Range(minDeltaZ, maxDeltaZ);
-            points[i] = new Vector2(x, z) + points[i - 1];
-            i++;
+            Vector2 lastPoint = new Vector2(x, z) + riverPoints[riverPoints.Count - 1];
+            riverPoints.Add(lastPoint);
         }
-        return points;
     }
 }
