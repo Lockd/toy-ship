@@ -9,73 +9,72 @@ public class RiverMeshGenerator : MonoBehaviour
     public int terrainWidth = 20;
     public float xDistanceBetweenTerrainDots = .5f;
     public float noiseHeightModifier = 1.5f;
+    public int xSize = 40;
+    public int zSize = 40;
     Mesh mesh;
-    Vector3[] vertices;
-    Vector3[] upperLeftDots;
-    Vector3[] upperRightDots;
-    Vector3[] terrainLeftDots;
-    Vector3[] terrainRightDots;
+    List<Vector3> vertices;
+    List<Vector3> upperLeftDots;
+    List<Vector3> upperRightDots;
+    List<Vector3> terrainLeftDots;
+    List<Vector3> terrainRightDots;
     int[] triangles;
-
+    MeshCollider meshCollider;
     void Start()
     {
+        meshCollider = GetComponent<MeshCollider>();
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
     }
 
-    public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots)
+    public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots, bool isInitial)
     {
-        upperLeftDots = new Vector3[leftDots.Length];
-        upperRightDots = new Vector3[rightDots.Length];
-        terrainLeftDots = new Vector3[leftDots.Length * (terrainWidth + 1)];
-        terrainRightDots = new Vector3[rightDots.Length * (terrainWidth + 1)];
+        upperLeftDots = new List<Vector3>();
+        upperRightDots = new List<Vector3>();
+        terrainLeftDots = new List<Vector3>();
+        terrainRightDots = new List<Vector3>();
 
-        // dots for river borders
-        for (int i = 0; i < upperLeftDots.Length; i++)
+        for (int i = 0; i < leftDots.Length; i++)
         {
-            upperLeftDots[i] = leftDots[i] + new Vector3(-xBorderOffset, borderHeight, 0);
-            upperRightDots[i] = rightDots[i] + new Vector3(xBorderOffset, borderHeight, 0);
+            upperLeftDots.Add(leftDots[i] + new Vector3(-xBorderOffset, borderHeight, 0));
+            upperRightDots.Add(rightDots[i] + new Vector3(xBorderOffset, borderHeight, 0));
         }
 
         // dots for left terrain
-        for (int verticeIdx = 0, x = terrainWidth; x >= 0; x--)
+        for (int x = terrainWidth; x >= 0; x--)
         {
-            for (int z = 0; z < upperLeftDots.Length; z++)
+            for (int z = 0; z < upperLeftDots.Count; z++)
             {
-                float xCoordinate = upperLeftDots[z].x - (x + 1) * xDistanceBetweenTerrainDots;
-                float yCoordinate = upperLeftDots[z].y + Mathf.PerlinNoise(x * .3f, z * .3f) * noiseHeightModifier;
-                float zCoordinate = upperLeftDots[z].z;
+                Vector3 point = upperLeftDots[z];
+                float xCoordinate = point.x - (x + 1) * xDistanceBetweenTerrainDots;
+                float yCoordinate = point.y + Mathf.PerlinNoise(x * .3f, z * .3f) * noiseHeightModifier;
+                float zCoordinate = point.z;
 
-                terrainLeftDots[verticeIdx] = new Vector3(xCoordinate, yCoordinate, zCoordinate);
-                verticeIdx++;
+                terrainLeftDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
             }
         }
         // dots for right terrain
-        for (int verticeIdx = 0, x = 0; x <= terrainWidth; x++)
+        for (int x = 0; x <= terrainWidth; x++)
         {
-            for (int z = 0; z < upperRightDots.Length; z++)
+            for (int z = 0; z < upperRightDots.Count; z++)
             {
                 float xCoordinate = upperRightDots[z].x + (x + 1) * xDistanceBetweenTerrainDots;
                 float yCoordinate = upperRightDots[z].y + Mathf.PerlinNoise(x * .3f, z * .3f) * noiseHeightModifier;
                 float zCoordinate = upperRightDots[z].z;
 
-                terrainRightDots[verticeIdx] = new Vector3(xCoordinate, yCoordinate, zCoordinate);
-                verticeIdx++;
+                terrainRightDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
             }
         }
 
-        // merging arrays (I miss js)
-        vertices = new Vector3[leftDots.Length * (4 + terrainWidth * 2 + 2)];
-        terrainLeftDots.CopyTo(vertices, 0);
-        upperLeftDots.CopyTo(vertices, terrainLeftDots.Length);
-        leftDots.CopyTo(vertices, leftDots.Length + terrainLeftDots.Length);
-        rightDots.CopyTo(vertices, leftDots.Length * 2 + terrainLeftDots.Length);
-        upperRightDots.CopyTo(vertices, leftDots.Length * 3 + terrainLeftDots.Length);
-        terrainRightDots.CopyTo(vertices, leftDots.Length * 4 + terrainLeftDots.Length);
-        
+        vertices = new List<Vector3>();
+        vertices.AddRange(terrainLeftDots);
+        vertices.AddRange(upperLeftDots);
+        vertices.AddRange(leftDots);
+        vertices.AddRange(rightDots);
+        vertices.AddRange(upperRightDots);
+        vertices.AddRange(terrainRightDots);
+
         triangles = new int[(leftDots.Length - 1) * (5 + terrainWidth * 2) * 6];
-        // triangles = new int[xSize * zSize * 6];
-        
+
         int vert = 0;
         int triangleIdx = 0;
         for (int z = 0; z < (5 + terrainWidth * 2); z++)
@@ -103,16 +102,17 @@ public class RiverMeshGenerator : MonoBehaviour
         if (mesh != null)
         {
             mesh.Clear();
-            mesh.vertices = vertices;
+            mesh.vertices = vertices.ToArray();
             mesh.triangles = triangles;
             mesh.RecalculateNormals();
+            meshCollider.sharedMesh = mesh;
         }
     }
 
     // use this for debugging purposes
     void OnDrawGizmos()
     {
-        if (terrainLeftDots != null)
+        if (vertices != null)
         {
             foreach (Vector3 vector in vertices)
             {
