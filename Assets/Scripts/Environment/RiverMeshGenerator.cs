@@ -19,6 +19,7 @@ public class RiverMeshGenerator : MonoBehaviour
     List<Vector3> terrainRightDots;
     int[] triangles;
     MeshCollider meshCollider;
+    int iterationsCounter = 0;
     void Start()
     {
         meshCollider = GetComponent<MeshCollider>();
@@ -26,7 +27,7 @@ public class RiverMeshGenerator : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
     }
 
-    public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots, bool isInitial)
+    public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots, bool isInitial, int indexIncrement)
     {
         upperLeftDots = new List<Vector3>();
         upperRightDots = new List<Vector3>();
@@ -46,7 +47,7 @@ public class RiverMeshGenerator : MonoBehaviour
             {
                 Vector3 point = upperLeftDots[z];
                 float xCoordinate = point.x - (x + 1) * xDistanceBetweenTerrainDots;
-                float yCoordinate = point.y + Mathf.PerlinNoise(x * .3f, z * .3f) * noiseHeightModifier;
+                float yCoordinate = point.y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
                 float zCoordinate = point.z;
 
                 terrainLeftDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
@@ -58,12 +59,14 @@ public class RiverMeshGenerator : MonoBehaviour
             for (int z = 0; z < upperRightDots.Count; z++)
             {
                 float xCoordinate = upperRightDots[z].x + (x + 1) * xDistanceBetweenTerrainDots;
-                float yCoordinate = upperRightDots[z].y + Mathf.PerlinNoise(x * .3f, z * .3f) * noiseHeightModifier;
+                float yCoordinate = upperRightDots[z].y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
                 float zCoordinate = upperRightDots[z].z;
 
                 terrainRightDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
             }
         }
+
+        iterationsCounter += indexIncrement;
 
         vertices = new List<Vector3>();
         vertices.AddRange(terrainLeftDots);

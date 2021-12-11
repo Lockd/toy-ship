@@ -17,11 +17,11 @@ public class RiverPathGenerator : MonoBehaviour
     // public float maxDistanceFromRiverCurve = 3f;
     public float deltaForRiverSegments = 1f;
     public int riverLength = 20;
+    public int amountOfSegmentsBetweenTwoDots = 4;
     public RiverMeshGenerator riverMeshGenerator;
     public GameObject player;
-    Vector3[] dotsLeft = null;
-    Vector3[] dotsRight = null;
-    Vector3[] prevLeftDots = null;
+    List<Vector3> dotsLeft = null;
+    List<Vector3> dotsRight = null;
     List<Vector2> riverPoints;
 
     void Start()
@@ -45,9 +45,9 @@ public class RiverPathGenerator : MonoBehaviour
         }
     }
 
-    BezierPath GeneratePath(Vector2[] points, bool closedPath)
+    BezierPath GeneratePath(Vector2[] points)
     {
-        BezierPath bezierPath = new BezierPath(points, closedPath, PathSpace.xz);
+        BezierPath bezierPath = new BezierPath(points, false, PathSpace.xz);
         return bezierPath;
     }
 
@@ -55,33 +55,38 @@ public class RiverPathGenerator : MonoBehaviour
     {
         GenerateRiverPoints(isInitial);
         Vector2[] riverPointsArray = riverPoints.ToArray();
-        BezierPath path = GeneratePath(riverPointsArray, false);
+        BezierPath path = GeneratePath(riverPointsArray);
         pathCreator.bezierPath = path;
 
-        int dotsLength = (int)(pathCreator.path.length / deltaForRiverSegments * 2 + 2) / 2;
-        prevLeftDots = dotsLeft;
-        dotsLeft = new Vector3[dotsLength];
-        dotsRight = new Vector3[dotsLength];
+        dotsLeft = new List<Vector3>();
+        dotsRight = new List<Vector3>();
 
-        int dotsIdx = 0;
-        for (float i = 0; i <= pathCreator.path.length; i += deltaForRiverSegments)
+        for (int idx = 0; idx < riverPointsArray.Length - 1; idx++)
         {
-            Vector3 direction = pathCreator.path.GetDirectionAtDistance(i);
-            Vector3 pos = pathCreator.path.GetPointAtDistance(i);
+            float currentDistance = pathCreator.path.GetClosestDistanceAlongPath(
+                new Vector3(riverPointsArray[idx].x, 0f, riverPointsArray[idx].y)
+            );
+            float nextDistance = pathCreator.path.GetClosestDistanceAlongPath(
+                new Vector3(riverPointsArray[idx + 1].x, 0f, riverPointsArray[idx + 1].y)
+            );
+            float delta = (nextDistance - currentDistance) / amountOfSegmentsBetweenTwoDots;
+            for (int i = 0; i < amountOfSegmentsBetweenTwoDots; i++)
+            {
+                float distance = currentDistance + i * delta;
+                Vector3 direction = pathCreator.path.GetDirectionAtDistance(distance);
+                Vector3 pos = pathCreator.path.GetPointAtDistance(distance);
 
-            // TODO find a way to change width of the river :)
-            // right side of the river
-            Vector3 rotatedLine = (Quaternion.AngleAxis(90, transform.up) * direction).normalized;
-            dotsRight[dotsIdx] = pos + rotatedLine * 2;
+                // right side of the river
+                Vector3 rotatedLine = (Quaternion.AngleAxis(90, transform.up) * direction).normalized;
+                dotsRight.Add(pos + rotatedLine * 2);
 
-            // left side of the river
-            Vector3 rotatedLineNegative = (Quaternion.AngleAxis(-90, transform.up) * direction).normalized;
-            dotsLeft[dotsIdx] = pos + rotatedLineNegative;
-
-            dotsIdx++;
+                // left side of the river
+                Vector3 rotatedLineNegative = (Quaternion.AngleAxis(-90, transform.up) * direction).normalized;
+                dotsLeft.Add(pos + rotatedLineNegative);
+            }
         }
 
-        riverMeshGenerator.GenerateMesh(dotsLeft, dotsRight, isInitial);
+        riverMeshGenerator.GenerateMesh(dotsLeft.ToArray(), dotsRight.ToArray(), isInitial, amountOfSegmentsBetweenTwoDots);
     }
 
     void GenerateRiverPoints(bool isInitial)
@@ -108,5 +113,21 @@ public class RiverPathGenerator : MonoBehaviour
             Vector2 lastPoint = new Vector2(x, z) + riverPoints[riverPoints.Count - 1];
             riverPoints.Add(lastPoint);
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (dotsLeft != null && dotsRight != null)
+        {
+            foreach (Vector3 vector in dotsLeft)
+            {
+                Gizmos.DrawSphere(vector, .05f);
+            }
+            foreach (Vector3 vector in dotsRight)
+            {
+                Gizmos.DrawSphere(vector, .05f);
+            }
+        }
+
     }
 }
