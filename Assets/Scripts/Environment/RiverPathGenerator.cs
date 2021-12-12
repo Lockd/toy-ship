@@ -15,7 +15,6 @@ public class RiverPathGenerator : MonoBehaviour
     // next two variables will be used for manipulating river width
     // public float minDistanceFromRiverCurve = 1f;
     // public float maxDistanceFromRiverCurve = 3f;
-    public float deltaForRiverSegments = 1f;
     public int riverLength = 20;
     public int amountOfSegmentsBetweenTwoDots = 4;
     public RiverMeshGenerator riverMeshGenerator;

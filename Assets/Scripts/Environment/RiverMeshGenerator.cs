@@ -9,8 +9,6 @@ public class RiverMeshGenerator : MonoBehaviour
     public int terrainWidth = 20;
     public float xDistanceBetweenTerrainDots = .5f;
     public float noiseHeightModifier = 1.5f;
-    public int xSize = 40;
-    public int zSize = 40;
     Mesh mesh;
     List<Vector3> vertices;
     List<Vector3> upperLeftDots;
@@ -27,46 +25,87 @@ public class RiverMeshGenerator : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
     }
 
-    public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots, bool isInitial, int indexIncrement)
+    public void GenerateMesh(Vector3[] leftDots, Vector3[] rightDots, bool isInitial, int amountOfSegments)
     {
-        upperLeftDots = new List<Vector3>();
-        upperRightDots = new List<Vector3>();
-        terrainLeftDots = new List<Vector3>();
-        terrainRightDots = new List<Vector3>();
-
-        for (int i = 0; i < leftDots.Length; i++)
+        if (isInitial)
         {
-            upperLeftDots.Add(leftDots[i] + new Vector3(-xBorderOffset, borderHeight, 0));
-            upperRightDots.Add(rightDots[i] + new Vector3(xBorderOffset, borderHeight, 0));
-        }
+            upperLeftDots = new List<Vector3>();
+            upperRightDots = new List<Vector3>();
+            terrainLeftDots = new List<Vector3>();
+            terrainRightDots = new List<Vector3>();
 
-        // dots for left terrain
-        for (int x = terrainWidth; x >= 0; x--)
-        {
-            for (int z = 0; z < upperLeftDots.Count; z++)
+            for (int i = 0; i < leftDots.Length; i++)
             {
-                Vector3 point = upperLeftDots[z];
-                float xCoordinate = point.x - (x + 1) * xDistanceBetweenTerrainDots;
-                float yCoordinate = point.y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
-                float zCoordinate = point.z;
+                upperLeftDots.Add(leftDots[i] + new Vector3(-xBorderOffset, borderHeight, 0));
+                upperRightDots.Add(rightDots[i] + new Vector3(xBorderOffset, borderHeight, 0));
+            }
 
-                terrainLeftDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
+            // dots for left terrain
+            for (int x = terrainWidth; x >= 0; x--)
+            {
+                for (int z = 0; z < upperLeftDots.Count; z++)
+                {
+                    Vector3 point = upperLeftDots[z];
+                    float xCoordinate = point.x - (x + 1) * xDistanceBetweenTerrainDots;
+                    float yCoordinate = point.y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
+                    float zCoordinate = point.z;
+
+                    terrainLeftDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
+                }
+            }
+            // dots for right terrain
+            for (int x = 0; x <= terrainWidth; x++)
+            {
+                for (int z = 0; z < upperRightDots.Count; z++)
+                {
+                    float xCoordinate = upperRightDots[z].x + (x + 1) * xDistanceBetweenTerrainDots;
+                    float yCoordinate = upperRightDots[z].y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
+                    float zCoordinate = upperRightDots[z].z;
+
+                    terrainRightDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
+                }
             }
         }
-        // dots for right terrain
-        for (int x = 0; x <= terrainWidth; x++)
+        else
         {
-            for (int z = 0; z < upperRightDots.Count; z++)
-            {
-                float xCoordinate = upperRightDots[z].x + (x + 1) * xDistanceBetweenTerrainDots;
-                float yCoordinate = upperRightDots[z].y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
-                float zCoordinate = upperRightDots[z].z;
+            upperRightDots.RemoveRange(0, amountOfSegments);
+            upperLeftDots.RemoveRange(0, amountOfSegments);
 
-                terrainRightDots.Add(new Vector3(xCoordinate, yCoordinate, zCoordinate));
+            for (int i = leftDots.Length - amountOfSegments; i < leftDots.Length; i++)
+            {
+                upperLeftDots.Add(leftDots[i] + new Vector3(-xBorderOffset, borderHeight, 0));
+                upperRightDots.Add(rightDots[i] + new Vector3(xBorderOffset, borderHeight, 0));
+            }
+
+            for (int x = terrainWidth; x >= 0; x--)
+            {
+                for (int z = upperLeftDots.Count - amountOfSegments; z < upperLeftDots.Count; z++)
+                {
+                    Vector3 point = upperLeftDots[z];
+                    float xCoordinate = point.x - (x + 1) * xDistanceBetweenTerrainDots;
+                    float yCoordinate = point.y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
+                    float zCoordinate = point.z;
+                    
+                    terrainLeftDots.RemoveAt(upperLeftDots.Count * x);
+                    terrainLeftDots.Insert(upperLeftDots.Count * (x  + 1) - 1, new Vector3(xCoordinate, yCoordinate, zCoordinate));
+                }
+            }
+            // dots for right terrain
+            for (int x = 0; x <= terrainWidth; x++)
+            {
+                for (int z = upperLeftDots.Count - amountOfSegments; z < upperRightDots.Count; z++)
+                {
+                    float xCoordinate = upperRightDots[z].x + (x + 1) * xDistanceBetweenTerrainDots;
+                    float yCoordinate = upperRightDots[z].y + Mathf.PerlinNoise(x * .3f, (z + iterationsCounter) * .3f) * noiseHeightModifier;
+                    float zCoordinate = upperRightDots[z].z;
+
+                    terrainRightDots.RemoveAt(upperRightDots.Count * x);
+                    terrainRightDots.Insert(upperRightDots.Count * (x  + 1) - 1, new Vector3(xCoordinate, yCoordinate, zCoordinate));
+                }
             }
         }
 
-        iterationsCounter += indexIncrement;
+        iterationsCounter += amountOfSegments;
 
         vertices = new List<Vector3>();
         vertices.AddRange(terrainLeftDots);
