@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5838707099861750118}
   - component: {fileID: 6927375211116148210}
   - component: {fileID: 4852057839973017540}
+  - component: {fileID: 6082129990660561194}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: c8afb8115631e9b4985dc54d5e623048, type: 3}
+  - {fileID: 2100000, guid: 9bc28a3b2c711624b9da70d0a413c587, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,6 +97,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: c8afb8115631e9b4985dc54d5e623048, type: 3}
+--- !u!114 &6082129990660561194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533185134614264599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06c2a43324bcef45bdc54833532e338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainPreset: {fileID: 11400000, guid: e984ea30aa498604296c2c27dca2973d, type: 2}
 --- !u!1 &8857325848535024590
 GameObject:
   m_ObjectHideFlags: 0
