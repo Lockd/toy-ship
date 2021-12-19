@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class RoadSpawner : MonoBehaviour
 {
-    public GameObject[] StraightRoads;
-    public GameObject[] StraightToLeftRoads;
-    public GameObject[] LeftToStraightRoads;
-    // TODO implement those road types as well?
+    public GameObject StraightRoad;
+    public GameObject StraightToLeftRoad;
+    public GameObject LeftToStraightRoad;
+    public GameObject LeftRoad;
     public int AmountOfTilesOnSpawn = 6;
-    private string LastRoadType;
-    private int indexOfLastTile = 1;
-    private Vector3 initialRoadPosition = new Vector3(0f, 0f, 0f);
-    private Vector3 positionScale = new Vector3(0f, 0f, 160f);
-    Vector3[] additionsForStreetLightPositions = {
-        new Vector3 (-35f, 0f, -40f),
-        new Vector3 (-35f, 0f, 40f),
-        new Vector3 (75F, 0f, 40f),
-        new Vector3 (75f, 0f, -40f)
-    };
+    string LastRoadType;
+    int indexOfLastTile = 1;
+    Vector3 initialRoadPosition = new Vector3(0f, 0f, 0f);
+    Vector3 positionScale = new Vector3(0f, 0f, 160f);
 
     void Start()
     {
@@ -40,19 +34,23 @@ public class RoadSpawner : MonoBehaviour
                 if (shouldChangeDirection)
                 {
                     LastRoadType = "left";
-                    return StraightToLeftRoads[Random.Range(0, StraightToLeftRoads.Length)];
+                    return StraightToLeftRoad;
                 }
 
-                return StraightRoads[Random.Range(0, StraightRoads.Length)];
+                return StraightRoad;
 
             case "left":
-                // TODO add straight left roads and add chance to use them here
+                if (shouldChangeDirection)
+                {
+                    LastRoadType = "straight";
+                    return LeftToStraightRoad;
+                }
 
-                LastRoadType = "straight";
-                return LeftToStraightRoads[Random.Range(0, LeftToStraightRoads.Length)];
+                return LeftRoad;
+
             default:
                 LastRoadType = "straight";
-                return StraightRoads[Random.Range(0, StraightRoads.Length)];
+                return StraightRoad;
         }
     }
 
@@ -60,9 +58,9 @@ public class RoadSpawner : MonoBehaviour
     {
         return initialRoadPosition + positionScale * indexOfLastTile;
     }
+
     public void createNewTile()
     {
-
         GameObject road = Instantiate(getNextRoadType(), transform);
         road.transform.position = getPositionForNewTile();
         indexOfLastTile++;

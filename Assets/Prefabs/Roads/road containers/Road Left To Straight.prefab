@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1957844807816964249}
   - component: {fileID: 4646352520498719164}
   m_Layer: 0
-  m_Name: Road Left-Right
+  m_Name: Road Left To Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

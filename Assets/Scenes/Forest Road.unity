@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 10446051}
   Preset: {fileID: 11400000, guid: c36717cedad12e044ba3e597ea3444b6, type: 2}
-  TimeOfDay: 17
+  TimeOfDay: 7
 --- !u!1 &30805439
 GameObject:
   m_ObjectHideFlags: 3
@@ -883,12 +883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c1ffa31f8f78d4babcd8942b10deb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StraightRoads:
-  - {fileID: 3029992780897926299, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
-  StraightToLeftRoads:
-  - {fileID: 3029992780897926299, guid: cd357e68e2dc8d74e827f4a970982516, type: 3}
-  LeftToStraightRoads:
-  - {fileID: 3029992780897926299, guid: 9399c9f1118de5c479d1a15c968ae565, type: 3}
+  StraightRoad: {fileID: 3029992780897926299, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
+  StraightToLeftRoad: {fileID: 3029992780897926299, guid: cd357e68e2dc8d74e827f4a970982516, type: 3}
+  LeftToStraightRoad: {fileID: 3029992780897926299, guid: 9399c9f1118de5c479d1a15c968ae565, type: 3}
+  LeftRoad: {fileID: 3029992780897926299, guid: eb214a96ffc6eb245ad5d36cb9ca34fe, type: 3}
   AmountOfTilesOnSpawn: 6
 --- !u!4 &355002477
 Transform:
