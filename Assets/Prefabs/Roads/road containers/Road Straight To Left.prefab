@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 5262965487671329505}
   - {fileID: 604789920423998031}
-  - {fileID: 263837078383750932}
+  - {fileID: 6757759312417664817}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -120,11 +120,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 6353987342263532916, guid: 9b69d53ed03b54c4db9e15d5d9a32be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b69d53ed03b54c4db9e15d5d9a32be6, type: 3}
---- !u!4 &263837078383750932 stripped
+--- !u!4 &6757759312417664817 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 453968509222780241, guid: 9b69d53ed03b54c4db9e15d5d9a32be6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6353987342263532916, guid: 9b69d53ed03b54c4db9e15d5d9a32be6, type: 3}
   m_PrefabInstance: {fileID: 424894830868173381}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1929672468727250301

@@ -24,9 +24,7 @@ public class RoadSpawner : MonoBehaviour
 
     GameObject getNextRoadType()
     {
-        bool shouldChangeDirection = false;
-        if (Random.Range(0f, 1f) > 0.5f)
-            shouldChangeDirection = true;
+        bool shouldChangeDirection = Random.Range(0f, 1f) >= 0.5f ? true : false;
 
         switch (LastRoadType)
         {

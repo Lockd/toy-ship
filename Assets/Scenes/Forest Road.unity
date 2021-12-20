@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_Sun: {fileID: 10446051}
+  m_IndirectSpecularColor: {r: 0.32982168, g: 0.49825817, b: 0.9076182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 58ac413633bd76b419a5ace2f28fd47a, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 70ee755b923e74f48a83bbbfaa1037b9, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -281,7 +281,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10446050}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 10446051}
   Preset: {fileID: 11400000, guid: c36717cedad12e044ba3e597ea3444b6, type: 2}
-  TimeOfDay: 7
+  TimeOfDay: 9
 --- !u!1 &30805439
 GameObject:
   m_ObjectHideFlags: 3
@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: isFirstTile
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2281317018989723937, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3029992780897926298, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -734,6 +738,22 @@ PrefabInstance:
     - target: {fileID: 3029992780897926299, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
       propertyPath: m_Name
       value: Road Straight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141971243583553447, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163093287856033197, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293571619601169625, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897726534129499656, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e59960805f99d7408f98e9a01882e9c, type: 3}
@@ -1942,7 +1962,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6229404539859685705, guid: f5949282f4371414b801c3f445163b25, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6229404539859685705, guid: f5949282f4371414b801c3f445163b25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2217,7 +2237,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 32.96973
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2251,7 +2271,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535682655}
-  m_LocalRotation: {x: 0.0809728, y: 0.000000004330963, z: -3.4472125e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.0809728, y: 0.000000004330962, z: -3.4472114e-10, w: 0.9967163}
   m_LocalPosition: {x: 64.75, y: 5.1000004, z: -33.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2314,7 +2334,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2732,7 +2752,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619211282}
-  m_LocalRotation: {x: 0.08097281, y: 0.000000004287471, z: -3.4831232e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.08097281, y: 0.00000000428747, z: -3.4831224e-10, w: 0.9967163}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
