@@ -6,6 +6,7 @@ using UnityEngine;
 public class FireBehaviour : MonoBehaviour
 {
     public GameObject fireContainer;
+    public GameObject _light;
     ParticleSystem fire;
     LightingManager lightingManager;
     bool isFireLighted = true;
@@ -28,6 +29,7 @@ public class FireBehaviour : MonoBehaviour
             {
                 fire.Play();
                 isFireLighted = true;
+                _light.SetActive(true);
             }
 
             if (
@@ -37,6 +39,7 @@ public class FireBehaviour : MonoBehaviour
             {
                 fire.Stop();
                 isFireLighted = false;
+                _light.SetActive(false);
             }
         }
     }
