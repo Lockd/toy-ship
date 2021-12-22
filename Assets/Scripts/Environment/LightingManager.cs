@@ -23,11 +23,6 @@ public class LightingManager : MonoBehaviour
             TimeOfDay += Time.deltaTime * 0.13f;
             TimeOfDay %= 24;
             updateLighting(TimeOfDay / 24f);
-
-            // bright time last longer for like 2 times, this can be manipulated in settings
-            // lets say that I want a day to last 2 minutes and night to be 1 minute, right?
-            // than 2 minutes = 16
-            // 120 seconds = 16f
         }
     }
 
@@ -39,7 +34,8 @@ public class LightingManager : MonoBehaviour
         if (DirectionalLight != null)
         {
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
-            DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 170f, 0));
+            // Removed this rotation so light is always present
+            // DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 170f, 0));
         }
     }
 

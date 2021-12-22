@@ -20,27 +20,27 @@ public class FireBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (lightingManager != null && fire != null)
-        {
-            if (
-                (lightingManager.TimeOfDay < 8f || lightingManager.TimeOfDay > 19f) &&
-                !isFireLighted
-            )
-            {
-                fire.Play();
-                isFireLighted = true;
-                _light.SetActive(true);
-            }
+        // if (lightingManager != null && fire != null)
+        // {
+        //     if (
+        //         (lightingManager.TimeOfDay < 8f || lightingManager.TimeOfDay > 19f) &&
+        //         !isFireLighted
+        //     )
+        //     {
+        //         fire.Play();
+        //         isFireLighted = true;
+        //         _light.SetActive(true);
+        //     }
 
-            if (
-                (lightingManager.TimeOfDay >= 8f && lightingManager.TimeOfDay <= 19f) &&
-                isFireLighted
-            )
-            {
-                fire.Stop();
-                isFireLighted = false;
-                _light.SetActive(false);
-            }
-        }
+        //     if (
+        //         (lightingManager.TimeOfDay >= 8f && lightingManager.TimeOfDay <= 19f) &&
+        //         isFireLighted
+        //     )
+        //     {
+        //         fire.Stop();
+        //         isFireLighted = false;
+        //         _light.SetActive(false);
+        //     }
+        // }
     }
 }
