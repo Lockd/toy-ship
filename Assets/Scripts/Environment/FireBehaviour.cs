@@ -9,7 +9,7 @@ public class FireBehaviour : MonoBehaviour
     public GameObject _light;
     ParticleSystem fire;
     LightingManager lightingManager;
-    bool isFireLighted = true;
+    // bool isFireLighted = true;
 
     void Start()
     {
