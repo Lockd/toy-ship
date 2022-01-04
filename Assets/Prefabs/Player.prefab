@@ -187,6 +187,8 @@ MonoBehaviour:
   coinSound: {fileID: 8300000, guid: 0a9501d86cb2bac4c9e770fb1123599e, type: 3}
   isRewinding: 0
   canRewind: 0
+  isMagnetic: 0
+  magnetismDuration: 30
   collectedCoins: 0
 --- !u!81 &1288331035327290617
 AudioListener:

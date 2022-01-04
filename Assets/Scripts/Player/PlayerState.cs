@@ -7,10 +7,9 @@ public class PlayerState : MonoBehaviour
     List<PointInTime> playerPositions;
     public float rewindDuration = 3f;
     public CharacterController controller;
-    public AudioClip coinSound;
     [HideInInspector] public bool isRewinding = false;
-    public bool canRewind = false;
-    public bool isMagnetic = true;
+    [HideInInspector] public bool canRewind = false;
+    [HideInInspector] public bool isMagnetic = false;
     public float magnetismDuration = 30f;
     float timeToEndMagnetism;
     ThirdPersonMovement movement;
@@ -33,6 +32,7 @@ public class PlayerState : MonoBehaviour
         {
             isMagnetic = true;
             timeToEndMagnetism = Time.time + magnetismDuration;
+            Destroy(other.gameObject);
         }
     }
 
