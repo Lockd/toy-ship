@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: itemIdx
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8842007923661192528, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: m_Name
       value: Coin (1)
@@ -321,6 +325,10 @@ PrefabInstance:
       propertyPath: itemIdx
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8842007923661192528, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: m_Name
       value: Coin (2)
@@ -379,6 +387,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5639539619333147245, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: itemIdx
       value: 4
       objectReference: {fileID: 0}
@@ -505,6 +517,10 @@ PrefabInstance:
       propertyPath: itemIdx
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8842007923661192528, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: m_Name
       value: Coin (2)
@@ -623,6 +639,10 @@ PrefabInstance:
       propertyPath: itemIdx
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8842007923661192528, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: m_Name
       value: Coin
@@ -684,6 +704,10 @@ PrefabInstance:
       propertyPath: itemIdx
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8842007923661192528, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: m_Name
       value: Coin (1)
@@ -742,6 +766,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5639539619333147245, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: itemIdx
       value: 2
       objectReference: {fileID: 0}
@@ -863,6 +891,10 @@ PrefabInstance:
       propertyPath: itemIdx
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8842007923661192528, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: m_Name
       value: Coin (1)
@@ -921,6 +953,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5639539619333147245, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: itemIdx
       value: 1
       objectReference: {fileID: 0}
@@ -1106,6 +1142,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5639539619333147245, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
+      propertyPath: itemIdx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456093554571771286, guid: dbefc4533a800344d852eb64ce2158b6, type: 3}
       propertyPath: itemIdx
       value: 1
       objectReference: {fileID: 0}

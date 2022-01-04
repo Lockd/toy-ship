@@ -10,6 +10,9 @@ public class PlayerState : MonoBehaviour
     public AudioClip coinSound;
     [HideInInspector] public bool isRewinding = false;
     public bool canRewind = false;
+    public bool isMagnetic = true;
+    public float magnetismDuration = 30f;
+    float timeToEndMagnetism;
     ThirdPersonMovement movement;
     [HideInInspector] public int collectedCoins = 0;
 
@@ -24,6 +27,12 @@ public class PlayerState : MonoBehaviour
         if (other.tag == "Collectable")
         {
             collectedCoins++;
+        }
+
+        if (other.tag == "Magnet")
+        {
+            isMagnetic = true;
+            timeToEndMagnetism = Time.time + magnetismDuration;
         }
     }
 
@@ -47,6 +56,10 @@ public class PlayerState : MonoBehaviour
         else
         {
             RecordPlayerPosition();
+        }
+        if (isMagnetic && timeToEndMagnetism != 0 && Time.time > timeToEndMagnetism)
+        {
+            isMagnetic = false;
         }
     }
 
