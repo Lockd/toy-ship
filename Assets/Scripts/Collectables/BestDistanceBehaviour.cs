@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtPlayer : MonoBehaviour
+public class BestDistanceBehaviour : MonoBehaviour
 {
     public GameObject player;
     public GameObject text;
@@ -28,8 +28,6 @@ public class LookAtPlayer : MonoBehaviour
 
             if (isActive)
             {
-                // transform.LookAt(player.transform);
-
                 transform.position = new Vector3(
                     player.transform.position.x,
                     transform.position.y,

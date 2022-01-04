@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 921446197349550904}
   - component: {fileID: 5869636358340257118}
   - component: {fileID: 7006310840782588944}
+  - component: {fileID: 1288331035327290617}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -183,8 +184,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewindDuration: 3
   controller: {fileID: 0}
+  coinSound: {fileID: 8300000, guid: 0a9501d86cb2bac4c9e770fb1123599e, type: 3}
   isRewinding: 0
   canRewind: 0
+  collectedCoins: 0
+--- !u!81 &1288331035327290617
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921446197349550884}
+  m_Enabled: 1
 --- !u!1 &921446197451319182
 GameObject:
   m_ObjectHideFlags: 0

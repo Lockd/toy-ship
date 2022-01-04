@@ -7,19 +7,23 @@ public class PlayerState : MonoBehaviour
     List<PointInTime> playerPositions;
     public float rewindDuration = 3f;
     public CharacterController controller;
+    public AudioClip coinSound;
     [HideInInspector] public bool isRewinding = false;
-
-    // TODO manipulate this variable when picking up time rewind thingy :)
     public bool canRewind = false;
     ThirdPersonMovement movement;
+    [HideInInspector] public int collectedCoins = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Time Rewind Buff")
         {
-            Debug.Log("Time rewind collected");
             canRewind = true;
             Destroy(other.gameObject);
+        }
+
+        if (other.tag == "Collectable")
+        {
+            collectedCoins++;
         }
     }
 
@@ -27,6 +31,11 @@ public class PlayerState : MonoBehaviour
     {
         playerPositions = new List<PointInTime>();
         movement = transform.GetComponent<ThirdPersonMovement>();
+    }
+
+    void Awake()
+    {
+        collectedCoins = 0;
     }
 
     void Update()
