@@ -6,6 +6,7 @@ public class TimeRewindSpawn : MonoBehaviour
 {
     public GameObject Player;
     PlayerState playerState = null;
+    bool prevCanRewind = false;
     void Start()
     {
         if (playerState == null)
@@ -22,5 +23,16 @@ public class TimeRewindSpawn : MonoBehaviour
             Debug.Log("Time rewind buff destroyed");
             Destroy(gameObject);
         }
+    }
+
+    void Update()
+    {
+        // Destroying buff if player picks one up
+        if (playerState != null)
+        {
+            if (!prevCanRewind && playerState.canRewind)
+                Destroy(gameObject);
+        }
+        prevCanRewind = playerState.canRewind;
     }
 }
