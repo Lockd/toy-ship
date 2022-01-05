@@ -184,7 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewindDuration: 3
   controller: {fileID: 0}
-  coinSound: {fileID: 8300000, guid: 0a9501d86cb2bac4c9e770fb1123599e, type: 3}
   isRewinding: 0
   canRewind: 0
   isMagnetic: 0
