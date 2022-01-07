@@ -326,7 +326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30805439}
-  m_LocalRotation: {x: 0.06287761, y: 0.0000000042930837, z: -2.7047403e-10, w: 0.99802125}
+  m_LocalRotation: {x: 0.06287761, y: -0.0000000042930837, z: 2.7047403e-10, w: 0.99802125}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1719,6 +1719,7 @@ RectTransform:
   - {fileID: 1878424773}
   - {fileID: 9104380}
   - {fileID: 325598851}
+  - {fileID: 1883778910}
   m_Father: {fileID: 1600458655}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2543,7 +2544,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535682655}
-  m_LocalRotation: {x: 0.080972806, y: 0.0000000043122, z: -3.463032e-10, w: 0.9967163}
+  m_LocalRotation: {x: 0.080972806, y: 0.0000000043121946, z: -3.4624584e-10, w: 0.9967163}
   m_LocalPosition: {x: 64.75, y: 3.0800002, z: -79.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3521,6 +3522,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1583384131}
   maxDistance: 0
+--- !u!1 &1883778909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883778910}
+  - component: {fileID: 1883778911}
+  m_Layer: 5
+  m_Name: Buff Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1883778910
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883778909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 903453849}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -439, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1883778911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883778909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785062db771f0c44b85fb7af1d5e5de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetIcon: {fileID: 1796146561768489134, guid: 1ff6a3a0dac83574e9252cd5abb2f893, type: 3}
+  timeRewindIcon: {fileID: 3482306785403799908, guid: 47792642430030549b62ea392d805fbe, type: 3}
 --- !u!1 &1885836440
 GameObject:
   m_ObjectHideFlags: 3
