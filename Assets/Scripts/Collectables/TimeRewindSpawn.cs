@@ -14,13 +14,8 @@ public class TimeRewindSpawn : MonoBehaviour
             playerState = Player.GetComponent<PlayerState>();
         }
 
-        if (!playerState.canRewind && Random.Range(0f, 1f) >= 0.9f)
+        if (!playerState.canRewind && Random.Range(0f, 1f) < 0.75f)
         {
-            Debug.Log("Time Rewind spawned ");
-        }
-        else
-        {
-            Debug.Log("Time rewind buff destroyed");
             Destroy(gameObject);
         }
     }

@@ -11,8 +11,6 @@ public class celebrateBestDistance : MonoBehaviour
 
     void Start()
     {
-        bestDistance = PlayerPrefs.GetFloat("BestDistance") * 10;
-        Debug.Log("Best distance " + bestDistance);
         confetti1.Stop();
         confetti2.Stop();
     }
