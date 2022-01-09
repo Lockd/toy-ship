@@ -10,6 +10,8 @@ TagManager:
   - Collectable
   - Time Rewind Buff
   - Magnet
+  - Animal
+  - Animal_jump_collider
   layers:
   - Default
   - TransparentFX
