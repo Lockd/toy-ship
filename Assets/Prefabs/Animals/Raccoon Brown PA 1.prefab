@@ -1954,7 +1954,7 @@ GameObject:
   - component: {fileID: 2051693263714018661}
   - component: {fileID: 2099245809642605567}
   - component: {fileID: 2051016779253013473}
-  - component: {fileID: 4330078308322054924}
+  - component: {fileID: 8237718516307502047}
   m_Layer: 20
   m_Name: Raccoon Brown PA 1
   m_TagString: Untagged
@@ -2015,7 +2015,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4330078308322054924
+--- !u!114 &8237718516307502047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2024,12 +2024,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050603925968987419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 012609b8036718847a2070b61db625b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d61fa2637c7474182875f3e16c7fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2099245809642605567}
+  pathCreator: {fileID: 0}
+  minDistanceToPlayer: 18
   startDigging: 0
-  isSleeping: 1
+  isSleeping: 0
 --- !u!1 &2050633501295758749
 GameObject:
   m_ObjectHideFlags: 0

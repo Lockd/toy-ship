@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
 
-public class FoxBehaviour : MonoBehaviour
+public class AnimalBehaviour : MonoBehaviour
 {
     public Animator animator;
     public PathCreator pathCreator;
     public float minDistanceToPlayer = 18f;
     public bool startDigging = false;
+    public bool isSleeping = false;
     GameObject player;
     float distanceTravelled = 0f;
     ThirdPersonMovement thirdPersonMovement;
     bool isNearPlayer = false;
+    List<string> runningAnimations = new List<string>{ "Fox_Run", "Rab_Run", "Rac_Run Forward" };
 
     void Start()
     {
@@ -22,6 +24,11 @@ public class FoxBehaviour : MonoBehaviour
         if (startDigging)
         {
             animator.SetBool("startDigging", true);
+        }
+
+        if (isSleeping)
+        {
+            animator.SetBool("isSleeping", true);
         }
     }
 
@@ -37,7 +44,7 @@ public class FoxBehaviour : MonoBehaviour
 
             AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
             
-            if (isNearPlayer && clips[0].clip.name == "Fox_Run")
+            if (isNearPlayer && runningAnimations.Contains(clips[0].clip.name))
             {
                 distanceTravelled += (thirdPersonMovement.speed + 3f) * Time.deltaTime;
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);

@@ -1931,7 +1931,7 @@ GameObject:
   - component: {fileID: 1955128150127148277}
   - component: {fileID: 1909304220028284515}
   - component: {fileID: 1958184365268266360}
-  - component: {fileID: 1958184365268266363}
+  - component: {fileID: -8132675310359688862}
   m_Layer: 20
   m_Name: Raccoon Cub PA
   m_TagString: Untagged
@@ -1992,7 +1992,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1958184365268266363
+--- !u!114 &-8132675310359688862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2001,12 +2001,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958843243210125519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 012609b8036718847a2070b61db625b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d61fa2637c7474182875f3e16c7fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1909304220028284515}
+  pathCreator: {fileID: 0}
+  minDistanceToPlayer: 18
   startDigging: 0
-  isSleeping: 1
+  isSleeping: 0
 --- !u!1 &1958857768857506735
 GameObject:
   m_ObjectHideFlags: 0

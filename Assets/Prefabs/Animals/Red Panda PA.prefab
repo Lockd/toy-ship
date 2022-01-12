@@ -1154,8 +1154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6231598610761608239}
   - component: {fileID: 6278346596087812811}
-  - component: {fileID: 2090663120471960919}
   - component: {fileID: 6917319483663623645}
+  - component: {fileID: 228598435938337104}
   m_Layer: 20
   m_Name: Red Panda PA
   m_TagString: Untagged
@@ -1200,21 +1200,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2090663120471960919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6229028944797913973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 012609b8036718847a2070b61db625b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 6278346596087812811}
-  startDigging: 0
-  isSleeping: 0
 --- !u!54 &6917319483663623645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1231,6 +1216,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &228598435938337104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229028944797913973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d61fa2637c7474182875f3e16c7fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6278346596087812811}
+  pathCreator: {fileID: 0}
+  minDistanceToPlayer: 18
+  startDigging: 0
+  isSleeping: 0
 --- !u!1 &6229315096777653899
 GameObject:
   m_ObjectHideFlags: 0
