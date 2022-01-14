@@ -765,7 +765,7 @@ Transform:
   m_GameObject: {fileID: 462231424864539294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 71.252, y: 0, z: 3.939}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 460154547672320810}
@@ -824,9 +824,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 521595821596319966}
   pathCreator: {fileID: 0}
+  speed: 0
   minDistanceToPlayer: 18
   startDigging: 0
   isSleeping: 0
+  isRunning: 0
 --- !u!1 &462256173270900984
 GameObject:
   m_ObjectHideFlags: 0

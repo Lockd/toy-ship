@@ -1180,8 +1180,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2734722474454258143}
   m_LocalRotation: {x: -0, y: 0.69492036, z: -0, w: 0.71908677}
-  m_LocalPosition: {x: 6.87, y: 0.753, z: 122.73}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalPosition: {x: 6.87, y: 0.2, z: 122.73}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2730879090299311121}
@@ -1223,8 +1223,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2640540305787658435}
   pathCreator: {fileID: 0}
+  speed: 0
   minDistanceToPlayer: 5
   startDigging: 0
+  isSleeping: 0
+  isRunning: 0
 --- !u!54 &6829619595615063403
 Rigidbody:
   m_ObjectHideFlags: 0

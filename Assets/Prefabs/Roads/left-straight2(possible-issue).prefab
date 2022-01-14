@@ -39,6 +39,8 @@ Transform:
   - {fileID: 5936252070132951293}
   - {fileID: 2360921005763013007}
   - {fileID: 5899532958977325385}
+  - {fileID: 9209422820159704884}
+  - {fileID: 6532482302214252991}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -154,6 +156,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainPreset: {fileID: 11400000, guid: e984ea30aa498604296c2c27dca2973d, type: 2}
+--- !u!1001 &704757593670044535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1611274088776063835}
+    m_Modifications:
+    - target: {fileID: 8504376430217643069, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_Name
+      value: Raccoon Brown PA Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0034561157
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.31214258
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9500353
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 216.377
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+--- !u!4 &9209422820159704884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8505536142845183043, guid: 8cb24061b5eb1124b823c06251432ca5, type: 3}
+  m_PrefabInstance: {fileID: 704757593670044535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &896664444586377258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,6 +844,72 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7447552176729722408, guid: 5503e7a741c5d8e4588f6d65f9d0447f, type: 3}
   m_PrefabInstance: {fileID: 3928366784417429345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4722596756551914826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1611274088776063835}
+    m_Modifications:
+    - target: {fileID: -8132675310359688862, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: isSleeping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.27431056
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.96164113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 148.158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958843243210125519, guid: f636f22f01805c147a640abffe03f719, type: 3}
+      propertyPath: m_Name
+      value: Raccoon Cub PA
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f636f22f01805c147a640abffe03f719, type: 3}
+--- !u!4 &6532482302214252991 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1955128150127148277, guid: f636f22f01805c147a640abffe03f719, type: 3}
+  m_PrefabInstance: {fileID: 4722596756551914826}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5660563360645576334
 PrefabInstance:
