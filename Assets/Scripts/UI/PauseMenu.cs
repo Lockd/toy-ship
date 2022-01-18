@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,12 +16,20 @@ public class PauseMenu : MonoBehaviour
     private float countdownLength;
     private bool isInCoroutine = false;
     ingameUI ingameUI;
+    public Volume sceneVolume;
+    DepthOfField depthOfField;
 
     void Awake()
     {
         countdownText.gameObject.SetActive(false);
         countdownLength = 3;
         ingameUI = ingameUIGameObject.GetComponent<ingameUI>();
+
+        DepthOfField tempDof;
+        if (sceneVolume.profile.TryGet<DepthOfField>(out tempDof))
+        {
+            depthOfField = tempDof;
+        }
     }
 
     void Update()
