@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 31533754}
   - component: {fileID: 31533753}
   - component: {fileID: 31533752}
+  - component: {fileID: 31533755}
   m_Layer: 5
   m_Name: Button (16)
   m_TagString: Untagged
@@ -206,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 31533753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31533753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +258,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31533750}
   m_CullTransparentMesh: 1
+--- !u!114 &31533755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31533750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &41121018
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +541,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80834838}
   m_CullTransparentMesh: 1
+--- !u!1 &102433234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102433235}
+  m_Layer: 5
+  m_Name: Header
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &102433235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102433234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2019776801}
+  m_Father: {fileID: 1225456850}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 619.21, y: 2590.7864}
+  m_SizeDelta: {x: 1438.4, y: 380.42236}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &111329214
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +725,7 @@ GameObject:
   - component: {fileID: 120733199}
   - component: {fileID: 120733198}
   - component: {fileID: 120733197}
+  - component: {fileID: 120733200}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -733,7 +797,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120733198}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &120733198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +848,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120733195}
   m_CullTransparentMesh: 1
+--- !u!114 &120733200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120733195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &204244760
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +873,7 @@ GameObject:
   - component: {fileID: 204244764}
   - component: {fileID: 204244763}
   - component: {fileID: 204244762}
+  - component: {fileID: 204244765}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -855,7 +945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 204244763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &204244763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,6 +996,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204244760}
   m_CullTransparentMesh: 1
+--- !u!114 &204244765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204244760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &216883104
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +1021,7 @@ GameObject:
   - component: {fileID: 216883108}
   - component: {fileID: 216883107}
   - component: {fileID: 216883106}
+  - component: {fileID: 216883109}
   m_Layer: 5
   m_Name: Button (14)
   m_TagString: Untagged
@@ -977,7 +1093,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 216883107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &216883107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,6 +1144,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216883104}
   m_CullTransparentMesh: 1
+--- !u!114 &216883109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216883104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &294476899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1371,7 @@ GameObject:
   - component: {fileID: 388369503}
   - component: {fileID: 388369502}
   - component: {fileID: 388369501}
+  - component: {fileID: 388369504}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1301,7 +1443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 388369502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &388369502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,6 +1494,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388369499}
   m_CullTransparentMesh: 1
+--- !u!114 &388369504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388369499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &392673481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1755,7 @@ GameObject:
   - component: {fileID: 542262545}
   - component: {fileID: 542262544}
   - component: {fileID: 542262543}
+  - component: {fileID: 542262546}
   m_Layer: 5
   m_Name: Button (18)
   m_TagString: Untagged
@@ -1659,7 +1827,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 542262544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &542262544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,6 +1878,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542262541}
   m_CullTransparentMesh: 1
+--- !u!114 &542262546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542262541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &614643045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1903,7 @@ GameObject:
   - component: {fileID: 614643049}
   - component: {fileID: 614643048}
   - component: {fileID: 614643047}
+  - component: {fileID: 614643050}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -1781,7 +1975,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 614643048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &614643048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,6 +2026,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614643045}
   m_CullTransparentMesh: 1
+--- !u!114 &614643050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614643045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &621868091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +2051,7 @@ GameObject:
   - component: {fileID: 621868095}
   - component: {fileID: 621868094}
   - component: {fileID: 621868093}
+  - component: {fileID: 621868096}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1903,7 +2123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 621868094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &621868094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1942,6 +2174,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621868091}
   m_CullTransparentMesh: 1
+--- !u!114 &621868096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621868091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &657096697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,6 +2854,7 @@ GameObject:
   - component: {fileID: 894962380}
   - component: {fileID: 894962379}
   - component: {fileID: 894962378}
+  - component: {fileID: 894962381}
   m_Layer: 5
   m_Name: Button (12)
   m_TagString: Untagged
@@ -2680,7 +2926,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 894962379}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &894962379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,6 +2977,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894962376}
   m_CullTransparentMesh: 1
+--- !u!114 &894962381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894962376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &943440591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +3098,7 @@ GameObject:
   - component: {fileID: 945416006}
   - component: {fileID: 945416005}
   - component: {fileID: 945416004}
+  - component: {fileID: 945416007}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -2898,7 +3170,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 945416005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &945416005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2937,6 +3221,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945416002}
   m_CullTransparentMesh: 1
+--- !u!114 &945416007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945416002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &950661072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,6 +3246,7 @@ GameObject:
   - component: {fileID: 950661076}
   - component: {fileID: 950661075}
   - component: {fileID: 950661074}
+  - component: {fileID: 950661077}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -3020,7 +3318,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 950661075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &950661075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3059,6 +3369,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950661072}
   m_CullTransparentMesh: 1
+--- !u!114 &950661077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950661072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1024721986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,6 +3934,7 @@ GameObject:
   - component: {fileID: 1144324509}
   - component: {fileID: 1144324508}
   - component: {fileID: 1144324507}
+  - component: {fileID: 1144324510}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -3682,7 +4006,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1144324508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1144324508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3721,6 +4057,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144324505}
   m_CullTransparentMesh: 1
+--- !u!114 &1144324510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144324505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1150968595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,6 +4082,7 @@ GameObject:
   - component: {fileID: 1150968599}
   - component: {fileID: 1150968598}
   - component: {fileID: 1150968597}
+  - component: {fileID: 1150968600}
   m_Layer: 5
   m_Name: Button (17)
   m_TagString: Untagged
@@ -3804,7 +4154,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1150968598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1150968598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3843,6 +4205,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150968595}
   m_CullTransparentMesh: 1
+--- !u!114 &1150968600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150968595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1156753738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,6 +4230,7 @@ GameObject:
   - component: {fileID: 1156753742}
   - component: {fileID: 1156753741}
   - component: {fileID: 1156753740}
+  - component: {fileID: 1156753743}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -3926,7 +4302,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1156753741}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1156753741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3965,6 +4353,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156753738}
   m_CullTransparentMesh: 1
+--- !u!114 &1156753743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156753738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1211408505
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,6 +4378,7 @@ GameObject:
   - component: {fileID: 1211408509}
   - component: {fileID: 1211408508}
   - component: {fileID: 1211408507}
+  - component: {fileID: 1211408510}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -4048,7 +4450,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1211408508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1211408508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,6 +4501,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211408505}
   m_CullTransparentMesh: 1
+--- !u!114 &1211408510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211408505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1225456849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,6 +4543,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 102433235}
   - {fileID: 1355253400}
   m_Father: {fileID: 392673485}
   m_RootOrder: 0
@@ -4171,7 +4599,7 @@ RectTransform:
   m_Children:
   - {fileID: 943440592}
   m_Father: {fileID: 1225456850}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4406,6 +4834,7 @@ GameObject:
   - component: {fileID: 1451680211}
   - component: {fileID: 1451680210}
   - component: {fileID: 1451680209}
+  - component: {fileID: 1451680212}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -4477,7 +4906,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451680210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1451680210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4516,6 +4957,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451680207}
   m_CullTransparentMesh: 1
+--- !u!114 &1451680212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451680207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1487273015
 GameObject:
   m_ObjectHideFlags: 0
@@ -4916,6 +5370,7 @@ GameObject:
   - component: {fileID: 1803087999}
   - component: {fileID: 1803087998}
   - component: {fileID: 1803087997}
+  - component: {fileID: 1803088000}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -4987,7 +5442,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1803087998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1803087998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5026,6 +5493,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803087995}
   m_CullTransparentMesh: 1
+--- !u!114 &1803088000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803087995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1808408348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5173,6 +5653,7 @@ GameObject:
   - component: {fileID: 1940508036}
   - component: {fileID: 1940508035}
   - component: {fileID: 1940508034}
+  - component: {fileID: 1940508037}
   m_Layer: 5
   m_Name: Button (19)
   m_TagString: Untagged
@@ -5244,7 +5725,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1940508035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1940508035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5283,6 +5776,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940508032}
   m_CullTransparentMesh: 1
+--- !u!114 &1940508037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940508032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
 --- !u!1 &1976298095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5565,6 +6071,7 @@ GameObject:
   - component: {fileID: 1994126536}
   - component: {fileID: 1994126535}
   - component: {fileID: 1994126534}
+  - component: {fileID: 1994126537}
   m_Layer: 5
   m_Name: Button (13)
   m_TagString: Untagged
@@ -5636,7 +6143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1994126535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1994126535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5675,6 +6194,168 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994126532}
   m_CullTransparentMesh: 1
+--- !u!114 &1994126537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994126532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
+--- !u!1 &2019776800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019776801}
+  - component: {fileID: 2019776803}
+  - component: {fileID: 2019776802}
+  - component: {fileID: 2019776804}
+  m_Layer: 5
+  m_Name: Coins Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2019776801
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019776800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 102433235}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1438.4, y: 380.4225}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2019776802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019776800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Coins: '
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 120
+  m_fontSizeBase: 120
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2019776803
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019776800}
+  m_CullTransparentMesh: 1
+--- !u!114 &2019776804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019776800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b5bc38aea714d4f8b56a2348fc03bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsText: {fileID: 2019776802}
 --- !u!1 &2036495474
 GameObject:
   m_ObjectHideFlags: 0
@@ -5822,6 +6503,7 @@ GameObject:
   - component: {fileID: 2086628241}
   - component: {fileID: 2086628240}
   - component: {fileID: 2086628239}
+  - component: {fileID: 2086628242}
   m_Layer: 5
   m_Name: Button (15)
   m_TagString: Untagged
@@ -5893,7 +6575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2086628240}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31533755}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: onPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2086628240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5932,3 +6626,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086628237}
   m_CullTransparentMesh: 1
+--- !u!114 &2086628242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086628237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 20
