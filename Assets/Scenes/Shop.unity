@@ -798,7 +798,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 120733200}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 204244765}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 216883109}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 388369504}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 542262546}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 614643050}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -2124,7 +2124,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 621868096}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 894962381}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -3171,7 +3171,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 945416007}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -3319,7 +3319,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 950661077}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -4007,7 +4007,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1144324510}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -4155,7 +4155,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1150968600}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -4303,7 +4303,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1156753743}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -4451,7 +4451,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1211408510}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -4907,7 +4907,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1451680212}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -5443,7 +5443,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1803088000}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -5726,7 +5726,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1940508037}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -6144,7 +6144,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 1994126537}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -6576,7 +6576,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31533755}
+      - m_Target: {fileID: 2086628242}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
