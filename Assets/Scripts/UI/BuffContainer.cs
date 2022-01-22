@@ -12,8 +12,8 @@ public class BuffContainer : MonoBehaviour
     void Start()
     {
         ActiveBuffs = new List<Buff>();
-        addBuff(7f, "Magnet", magnetIcon);
-        addBuff(-1, "Rewind", timeRewindIcon);
+        // addBuff(7f, "Magnet", magnetIcon);
+        // addBuff(-1, "Rewind", timeRewindIcon);
     }
 
     void Awake()

@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Road.unity
     guid: ca7aadb4645e1d34c9eccdd1067bc4b8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Experiment.unity
     guid: f950dd60c81ca8c4f981594bd3e4d4b8
   - enabled: 1
     path: Assets/Scenes/Forest Road.unity
     guid: aab894437fbc14b438089c5b41d95285
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: cd873955af89a8d4693ff32a9579571f
   m_configObjects: {}
