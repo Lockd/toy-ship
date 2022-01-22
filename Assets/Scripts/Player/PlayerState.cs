@@ -8,17 +8,30 @@ public class PlayerState : MonoBehaviour
     public float rewindDuration = 3f;
     public CharacterController controller;
     [HideInInspector] public bool isRewinding = false;
-
-    // TODO manipulate this variable when picking up time rewind thingy :)
-    public bool canRewind = false;
+    [HideInInspector] public bool canRewind = false;
+    [HideInInspector] public bool isMagnetic = false;
+    public float magnetismDuration = 30f;
+    float timeToEndMagnetism;
     ThirdPersonMovement movement;
+    [HideInInspector] public int collectedCoins = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Time Rewind Buff")
         {
-            Debug.Log("Time rewind collected");
             canRewind = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.tag == "Collectable")
+        {
+            collectedCoins++;
+        }
+
+        if (other.tag == "Magnet")
+        {
+            isMagnetic = true;
+            timeToEndMagnetism = Time.time + magnetismDuration;
             Destroy(other.gameObject);
         }
     }
@@ -27,6 +40,11 @@ public class PlayerState : MonoBehaviour
     {
         playerPositions = new List<PointInTime>();
         movement = transform.GetComponent<ThirdPersonMovement>();
+    }
+
+    void Awake()
+    {
+        collectedCoins = 0;
     }
 
     void Update()
@@ -38,6 +56,10 @@ public class PlayerState : MonoBehaviour
         else
         {
             RecordPlayerPosition();
+        }
+        if (isMagnetic && timeToEndMagnetism != 0 && Time.time > timeToEndMagnetism)
+        {
+            isMagnetic = false;
         }
     }
 

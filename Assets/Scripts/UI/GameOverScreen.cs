@@ -50,7 +50,6 @@ public class GameOverScreen : MonoBehaviour
     }
 
     public void onClickShopButton() {
-        // TODO one day you should add shop
-        SceneManager.LoadScene("Experiment");
+        SceneManager.LoadScene("Shop");
     }
 }

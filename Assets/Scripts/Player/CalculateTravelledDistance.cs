@@ -27,7 +27,7 @@ public class CalculateTravelledDistance : MonoBehaviour
         float travelledDistance = Mathf.Round(Player.transform.position.z / 10);
 
         if (travelledDistance >= maxDistance) {
-            textComponent.text = travelledDistance.ToString() + " meters";
+            textComponent.text = travelledDistance.ToString();
             maxDistance = travelledDistance;
         }
     }

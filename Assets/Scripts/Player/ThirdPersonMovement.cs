@@ -15,11 +15,10 @@ public class ThirdPersonMovement : MonoBehaviour
     public Joystick joystick;
     public PlayerState playerState;
 
-    private float timeOfExit;
-    private bool haveEnteredWater = false;
-    private bool isOnGameOverScreen = false;
-    private int collectedCoins = 0;
-
+    float timeOfExit;
+    bool haveEnteredWater = false;
+    bool isOnGameOverScreen = false;
+    
     public void OnExitWater()
     {
         amountOfPointsInWater -= 1;
@@ -36,7 +35,6 @@ public class ThirdPersonMovement : MonoBehaviour
         haveEnteredWater = false;
         amountOfPointsInWater = 0;
         isOnGameOverScreen = false;
-        collectedCoins = 0;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,12 +42,6 @@ public class ThirdPersonMovement : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             OnGameOver();
-        }
-
-        if (other.tag == "Collectable")
-        {
-            collectedCoins++;
-            Destroy(other.gameObject);
         }
     }
     public void OnGameOver()
@@ -62,7 +54,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             isOnGameOverScreen = true;
             calculateTravelledDistance.onGameOver();
-            gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, collectedCoins);
+            gameOverScreen.onDisplayChange(true, calculateTravelledDistance.maxDistance, playerState.collectedCoins);
         }
     }
 
