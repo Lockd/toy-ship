@@ -12,8 +12,6 @@ public class BuffContainer : MonoBehaviour
     void Start()
     {
         ActiveBuffs = new List<Buff>();
-        // addBuff(7f, "Magnet", magnetIcon);
-        // addBuff(-1, "Rewind", timeRewindIcon);
     }
 
     void Awake()
@@ -46,8 +44,20 @@ public class BuffContainer : MonoBehaviour
         }
     }
 
-    public void addBuff(float endsAt, string type, GameObject icon)
+    public void addBuff(float endsAt, string type)
     {
+        GameObject icon;
+        switch(type){
+            case "Magnet":
+                icon = magnetIcon;
+                break;
+            case "Rewind":
+                icon = timeRewindIcon;
+                break;
+            default:
+                icon = magnetIcon;
+                break;
+        }
         ActiveBuffs.Add(new Buff(endsAt, type, icon));
         updateUI();
     }

@@ -14,12 +14,15 @@ public class PlayerState : MonoBehaviour
     float timeToEndMagnetism;
     ThirdPersonMovement movement;
     [HideInInspector] public int collectedCoins = 0;
+    public GameObject buffContainerGameObject;
+    BuffContainer buffContainer;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Time Rewind Buff")
         {
             canRewind = true;
+            buffContainer.addBuff(-1, "Rewind");
             Destroy(other.gameObject);
         }
 
@@ -32,6 +35,7 @@ public class PlayerState : MonoBehaviour
         {
             isMagnetic = true;
             timeToEndMagnetism = Time.time + magnetismDuration;
+            buffContainer.addBuff(timeToEndMagnetism, "Magnet");
             Destroy(other.gameObject);
         }
     }
@@ -40,6 +44,7 @@ public class PlayerState : MonoBehaviour
     {
         playerPositions = new List<PointInTime>();
         movement = transform.GetComponent<ThirdPersonMovement>();
+        buffContainer = buffContainerGameObject.GetComponent<BuffContainer>();
     }
 
     void Awake()
