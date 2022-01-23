@@ -13,9 +13,15 @@ public class DisplayCollectedCoins : MonoBehaviour
     {
         text = gameObject.GetComponent<TextMeshProUGUI>();
         playerState = player.GetComponent<PlayerState>();
+        updateText();
     }
 
     void Update()
+    {
+        updateText();
+    }
+
+    void updateText()
     {
         if (text.text != playerState.collectedCoins.ToString())
         {

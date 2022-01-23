@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject ingameUIGameObject;
-    public GameObject pauseMenuBackground;
+    public GameObject pauseMenuContainer;
     public Text countdownText;
     private bool isCountingDown = false;
     private float countdownLength;
@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     {
         isCountingDown = true;
         countdownText.gameObject.SetActive(true);
-        pauseMenuBackground.gameObject.SetActive(false);
+        pauseMenuContainer.gameObject.SetActive(false);
         ingameUI.changeDisplay(true);
     }
 
@@ -63,7 +63,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         gameObject.SetActive(true);
-        pauseMenuBackground.gameObject.SetActive(true);
+        pauseMenuContainer.gameObject.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
         ingameUI.changeDisplay(false);
