@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool isGamePaused = false;
     public GameObject ingameUIGameObject;
     public GameObject pauseMenuContainer;
-    public Text countdownText;
+    public TextMeshProUGUI countdownText;
     private bool isCountingDown = false;
     private float countdownLength;
     private bool isInCoroutine = false;
@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
     IEnumerator countDown() {
         if (countdownLength == 0) {
             getBackToScene();
+            yield return null;
         }
         isInCoroutine = true;
         countdownText.text = countdownLength.ToString("f0");
@@ -57,7 +58,6 @@ public class PauseMenu : MonoBehaviour
         isCountingDown = false;
         Time.timeScale = 1f;
         gameObject.SetActive(false);
-        isGamePaused = false;
     }
 
     public void Pause()
@@ -65,7 +65,6 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(true);
         pauseMenuContainer.gameObject.SetActive(true);
         Time.timeScale = 0f;
-        isGamePaused = true;
         ingameUI.changeDisplay(false);
     }
 
