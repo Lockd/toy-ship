@@ -5,7 +5,6 @@ using UnityEngine;
 public class CoinBehaviour : MonoBehaviour
 {
     public AudioSource audioSource;
-    public GameObject coinModel;
     bool isSoundPlayed = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,7 +12,7 @@ public class CoinBehaviour : MonoBehaviour
         if (!isSoundPlayed)
         {
             audioSource.Play(0);
-            coinModel.transform.gameObject.SetActive(false);
+            gameObject.SetActive(false);
             isSoundPlayed = true;
         }
     }
