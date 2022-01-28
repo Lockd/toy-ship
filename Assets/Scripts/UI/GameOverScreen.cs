@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Text distanceText;
+    public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI bestDistanceText;
     public Text coinsText;
     public Text totalCoinsText;
     public Text newRecordText;
     public GameObject ingameUIGameObject;
     ingameUI ingameUI;
+    float bestDistance;
 
     void Awake() {
         ingameUI = ingameUIGameObject.GetComponent<ingameUI>();
         newRecordText.text = "";
+        bestDistance = PlayerPrefs.GetFloat("BestDistance");
+        bestDistanceText.text = bestDistance.ToString();
     }
 
     public void onDisplayChange(bool isActive, float distance, int coins) {
@@ -24,7 +29,7 @@ public class GameOverScreen : MonoBehaviour
 
         if (isActive) {
             float roundedDistance = Mathf.Round(distance);
-            distanceText.text = "You travelled " + roundedDistance.ToString() + " meters";
+            distanceText.text = roundedDistance.ToString();
 
             coinsText.text = "And collected " + coins.ToString() + " coin";
             if (!coins.ToString().EndsWith("1") || coins == 11) {
@@ -37,7 +42,6 @@ public class GameOverScreen : MonoBehaviour
 
             float bestDistance = PlayerPrefs.GetFloat("BestDistance");
             if (roundedDistance > bestDistance) {
-                PlayerPrefs.SetFloat("BestDistance", roundedDistance);
                 newRecordText.text = "New record!";
             }
         }
