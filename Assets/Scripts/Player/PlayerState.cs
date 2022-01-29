@@ -52,7 +52,7 @@ public class PlayerState : MonoBehaviour
         collectedCoins = 0;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isRewinding)
         {
