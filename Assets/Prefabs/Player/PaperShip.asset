@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d00c7122cdacc4997255b196786a2b, type: 3}
+  m_Name: PaperShip
+  m_EditorClassIdentifier: 
+  skinName: PaperShip
+  model: {fileID: 8493412542079646575, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
