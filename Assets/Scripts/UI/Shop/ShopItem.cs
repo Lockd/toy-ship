@@ -27,11 +27,6 @@ public class ShopItem : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void onPurchase()
     {
         float coinsAmount = PlayerPrefs.GetFloat("Coins");
