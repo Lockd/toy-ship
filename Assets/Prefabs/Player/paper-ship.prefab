@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4734482554010492819}
   - component: {fileID: 6079799055761915326}
   - component: {fileID: 1344226342853551151}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1830080294887641295}
   - component: {fileID: 5438369667026953292}
   - component: {fileID: 879911625738221889}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4427307599651725834}
   - component: {fileID: 4229329342252210185}
   - component: {fileID: 7711196247136003300}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 5396684039053408944}
   - component: {fileID: 3682130416389655598}
   - component: {fileID: 5052902378694332657}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9121329766026273237}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: paper-ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}

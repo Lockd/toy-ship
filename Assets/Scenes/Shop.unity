@@ -1963,6 +1963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469837500}
+  - component: {fileID: 1469837501}
   m_Layer: 5
   m_Name: Selected Skin
   m_TagString: Untagged
@@ -1991,6 +1992,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 95}
   m_SizeDelta: {x: 1080, y: 415.4}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1469837501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469837499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3652af1dba59a034198f6cc03ee84d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1534329957 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2899244979570089423, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
@@ -2006,6 +2019,30 @@ PrefabInstance:
     - target: {fileID: 2899244979570089416, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
       propertyPath: m_Name
       value: Shop Item (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1469837501}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: updateSelectedSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManageSelectedSkin, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 9902f63d9f0b0b047a134c3d541a6ce7, type: 2}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ShipSkin, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2899244979570089423, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
       propertyPath: m_Pivot.x
@@ -2548,7 +2585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 80
+      value: 80.00001
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalScale.z
@@ -2568,31 +2605,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8603832
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09869677
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4967421
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.056982577
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -6.501
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 60.649
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9121329766026273237, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -11.384
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d196c4b18bb9d648a459310473edd2b, type: 3}
@@ -2755,6 +2792,30 @@ PrefabInstance:
     - target: {fileID: 2899244979570089416, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
       propertyPath: m_Name
       value: Shop Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1469837501}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: updateSelectedSkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManageSelectedSkin, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe5aec3aa790b84da933defece2c4e9, type: 2}
+    - target: {fileID: 2899244979570089422, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ShipSkin, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2899244979570089423, guid: 58c13224e5a21884fb8e351ed37aecc1, type: 3}
       propertyPath: m_Pivot.x
