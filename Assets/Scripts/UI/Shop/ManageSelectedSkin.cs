@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class ManageSelectedSkin : MonoBehaviour
 {
+    [HideInInspector] public bool isCurrentItemPurchased = false;
+    public ShipSkin currentSkin;
     Vector3 skinPosition = new Vector3(0f, -76f, -124f);
+
+    void Start()
+    {
+        if (currentSkin != null)
+        {
+            updateSelectedSkin(currentSkin);
+        }
+    }
 
     public void updateSelectedSkin(ShipSkin newSkin)
     {
@@ -27,5 +37,16 @@ public class ManageSelectedSkin : MonoBehaviour
         RectTransform rectTransform = skin.AddComponent<RectTransform>();
 
         rectTransform.anchoredPosition = skinPosition;
+
+        int isPurchased = PlayerPrefs.GetInt("is" + newSkin.name + "Purchased");
+        if (isPurchased > 0)
+        {
+            isCurrentItemPurchased = true;
+            Debug.Log("Select button");
+        }
+        else
+        {
+            Debug.Log("Buy button");
+        }
     }
 }
