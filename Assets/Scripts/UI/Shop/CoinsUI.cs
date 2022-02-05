@@ -6,7 +6,7 @@ using TMPro;
 public class CoinsUI : MonoBehaviour
 {
     public TextMeshProUGUI coinsText;
-    float coins;
+    int coins;
     void Start()
     {
         updateCoinsInUI();
@@ -20,7 +20,7 @@ public class CoinsUI : MonoBehaviour
 
     public void updateCoinsInUI()
     {
-        coins = PlayerPrefs.GetFloat("Coins");
+        coins = PlayerPrefs.GetInt("Coins");
         coinsText.text = "Coins: " + coins;
     }
 }

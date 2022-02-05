@@ -36,8 +36,8 @@ public class GameOverScreen : MonoBehaviour
                 coinsText.text += "s";
             }
 
-            float totalCoins = PlayerPrefs.GetFloat("Coins") + coins;
-            PlayerPrefs.SetFloat("Coins", totalCoins);
+            int totalCoins = PlayerPrefs.GetInt("Coins") + coins;
+            PlayerPrefs.SetInt("Coins", totalCoins);
             totalCoinsText.text = "Total coins collected: " + totalCoins.ToString();
 
             float bestDistance = PlayerPrefs.GetFloat("BestDistance");

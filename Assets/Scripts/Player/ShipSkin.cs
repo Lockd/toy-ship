@@ -8,4 +8,5 @@ public class ShipSkin : ScriptableObject
 {
     public string skinName;
     public GameObject model;
+    public int price = 20;
 }

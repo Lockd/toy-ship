@@ -29,10 +29,10 @@ public class ShopItem : MonoBehaviour
 
     public void onPurchase()
     {
-        float coinsAmount = PlayerPrefs.GetFloat("Coins");
+        int coinsAmount = PlayerPrefs.GetInt("Coins");
         if (coinsAmount >= price && !isPurchased)
         {
-            PlayerPrefs.SetFloat("Coins", coinsAmount - price);
+            PlayerPrefs.SetInt("Coins", coinsAmount - price);
             isPurchased = true;
             button.interactable = false;
             PlayerPrefs.SetInt(GameObjectStoreName, 1);
