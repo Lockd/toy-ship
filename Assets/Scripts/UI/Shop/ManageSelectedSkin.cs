@@ -29,9 +29,9 @@ public class ManageSelectedSkin : MonoBehaviour
             GameObject.Destroy(instantiatedSkin);
         }
 
-        foreach (GameObject child in transform)
+        foreach (Transform child in transform)
         {
-            child.SetActive(false);
+            child.gameObject.SetActive(false);
         }
         
         currentSkin = newSkin;
@@ -83,11 +83,15 @@ public class ManageSelectedSkin : MonoBehaviour
         {
             PlayerPrefs.SetInt("Coins", coinsAmount - currentSkin.price);
             PlayerPrefs.SetInt("is" + currentSkin.name + "Purchased", 1);
+            selectButton.gameObject.SetActive(true);
+            buyButton.gameObject.SetActive(false);
         }
     }
 
     public void selectSkin()
     {
         PlayerPrefs.SetString("activeSkin", currentSkin.name);
+        selectedIndicator.SetActive(true);
+        selectButton.gameObject.SetActive(false);
     }
 }
