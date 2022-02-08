@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2899244979570089420}
   - component: {fileID: 2899244979570089421}
   - component: {fileID: 2899244979570089422}
-  - component: {fileID: 2899244979570089395}
+  - component: {fileID: 6030857119206817495}
   m_Layer: 5
   m_Name: Shop Item
   m_TagString: Untagged
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2899244979570089395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: onPurchase
         m_Mode: 1
@@ -270,7 +270,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2899244979570089395
+--- !u!114 &6030857119206817495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +279,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2899244979570089416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78cae677426fc69499241dc2672f5b45, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b10ff5530fc56a49b7ecabb5e3404f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 20
+  buffName: 
+  upgradePrices: 
