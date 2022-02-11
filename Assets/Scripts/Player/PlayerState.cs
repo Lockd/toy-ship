@@ -65,6 +65,7 @@ public class PlayerState : MonoBehaviour
         if (isMagnetic && timeToEndMagnetism != 0 && Time.time > timeToEndMagnetism)
         {
             isMagnetic = false;
+            buffContainer.removeBuff("Magnet");
         }
     }
 
@@ -119,5 +120,6 @@ public class PlayerState : MonoBehaviour
         isRewinding = true;
         canRewind = false;
         Time.timeScale = 0.7f;
+        buffContainer.removeBuff("Rewind");
     }
 }

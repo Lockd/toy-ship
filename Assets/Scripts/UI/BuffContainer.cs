@@ -7,7 +7,7 @@ public class BuffContainer : MonoBehaviour
     List<Buff> ActiveBuffs;
     public GameObject magnetIcon;
     public GameObject timeRewindIcon;
-    Vector3 positionDifference = new Vector3 (0f, 120f, 0f);
+    Vector3 positionDifference = new Vector3(0f, 120f, 0f);
 
     void Start()
     {
@@ -32,9 +32,10 @@ public class BuffContainer : MonoBehaviour
         }
     }
 
-    void updateUI ()
+    void updateUI()
     {
-        foreach (Transform child in transform) {
+        foreach (Transform child in transform)
+        {
             GameObject.Destroy(child.gameObject);
         }
         for (int i = 0; i < ActiveBuffs.Count; i++)
@@ -47,7 +48,8 @@ public class BuffContainer : MonoBehaviour
     public void addBuff(float endsAt, string type)
     {
         GameObject icon;
-        switch(type){
+        switch (type)
+        {
             case "Magnet":
                 icon = magnetIcon;
                 break;
@@ -58,7 +60,17 @@ public class BuffContainer : MonoBehaviour
                 icon = magnetIcon;
                 break;
         }
-        ActiveBuffs.Add(new Buff(endsAt, type, icon));
+
+        int elIdx = ActiveBuffs.FindIndex(el => el.type == type);
+        if (elIdx >= 0)
+        {
+            ActiveBuffs[elIdx].endsAt = endsAt;
+        }
+        else
+        {
+            ActiveBuffs.Add(new Buff(endsAt, type, icon));
+        }
+        
         updateUI();
     }
 
